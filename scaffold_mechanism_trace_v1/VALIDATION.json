@@ -1,0 +1,20 @@
+{
+  "syntax_check": "passed",
+  "offline_unit_tests": {
+    "passed": 9,
+    "failed": 0
+  },
+  "synthetic_report_and_archive_integration": "passed",
+  "actual_uploaded_audit_plan": {
+    "runs": 30,
+    "onset_windows": 14,
+    "recovery_windows": 14,
+    "same_input_observation_controls": 27,
+    "contrasts": 55,
+    "saved_states": 114
+  },
+  "source_sha256_matches": 13,
+  "prior_feedback_results_rechecked": true,
+  "real_model_gpu_run_here": false,
+  "limitation": "The actual checkpoint and recorded .pt tensors are on the user machine. Native replay and head reconstruction are mandatory runtime gates, not yet completed here."
+}

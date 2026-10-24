@@ -1,0 +1,14 @@
+{
+  "hypothesis": "Does the sampled attachment-state transition influence the final fixed-fragment connection through network reading, integration, or both? This is a candidate, not an assumed error.",
+  "seed": 47,
+  "site": 0,
+  "focal_pair": [0, 17],
+  "monitor_partners": [15, 17],
+  "previous_call": 24,
+  "event_call": 25,
+  "expected_old_class": 0,
+  "expected_new_class": 1,
+  "time_control_calls": [26, 28],
+  "include_reverse_timing_control": true,
+  "capture_calls": [23, 24, 25, 26, 27]
+}

@@ -1,0 +1,15 @@
+{
+  "all_50_requested_states_previously_verified": true,
+  "fixed_pair_selection_matches_all_10_task_mappings": true,
+  "previous_real_pair_transitions_checked": 540,
+  "old_contrast_regression_max_error": 0.0,
+  "triple_single_reverse_contrast_passed": true,
+  "triple_single_decomposition_max_closure_error": 2.8657631823136853e-14,
+  "independent_gradient_integral_max_error": 6.848688283156434e-14,
+  "cross_seed_generated_slot_alignment_rejected": true,
+  "legacy_generated_partner_selection_passed": true,
+  "full_offline_analysis_on_previous_real_capture_passed": true,
+  "current_bace_gpu_capture_run_here": false,
+  "limitation": "No PyTorch/CUDA/checkpoint in this workspace; the new 50-state BACE capture must pass the unchanged runtime replay and numerical gates on the original machine.",
+  "observer_sha256": "b1adadd8fccaad431d95632e77da5646c3de2815f9ece1ceac1e217fa747268e"
+}

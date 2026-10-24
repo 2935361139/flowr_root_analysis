@@ -1,0 +1,38 @@
+{
+  "date_utc": "2026-10-23T12:33:53.210952+00:00",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "deliverables/scaffold_boundary_audit_v1/tests/check_audit.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_bad_mask_or_nonfinite_data_is_not_silent (__main__.Tests.test_bad_mask_or_nonfinite_data_is_not_silent) ... ok\ntest_charge_and_all_fixed_sites_not_carbon_only (__main__.Tests.test_charge_and_all_fixed_sites_not_carbon_only) ... ok\ntest_decode_element_change_and_mapping_guard (__main__.Tests.test_decode_element_change_and_mapping_guard) ... ok\ntest_first_appearance_is_not_terminal_interval (__main__.Tests.test_first_appearance_is_not_terminal_interval) ... ok\ntest_geometry_translation_and_lower_triangle_probability (__main__.Tests.test_geometry_translation_and_lower_triangle_probability) ... ok\ntest_internal_bond_changes_at_different_atom_indices (__main__.Tests.test_internal_bond_changes_at_different_atom_indices) ... ok\ntest_native_lower_triangle_and_virtual_removal (__main__.Tests.test_native_lower_triangle_and_virtual_removal) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "py_compile",
+        "deliverables/scaffold_boundary_audit_v1/audit_saved_boundaries.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "deliverables/scaffold_boundary_audit_v1/audit_saved_boundaries.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stdout": "usage: audit_saved_boundaries.py [-h] [--batch-root BATCH_ROOT]\n                                 [--output OUTPUT] [--resume]\n\nAudit ALL saved baseline trajectories on CPU; no model/weights/generation.\nUses this FLOWR version's own molecule builder with repair OFF, and RDKit's\nchemistry-problem detector. All fixed sites are examined, not a named\natom/case. Intermediate argmax violations are observations, NOT proof of\ngeneration failure or a causal commitment point. Existing terminal labels\nremain unchanged.\n\noptions:\n  -h, --help            show this help message and exit\n  --batch-root BATCH_ROOT\n  --output OUTPUT\n  --resume\n",
+      "stderr": ""
+    }
+  ],
+  "torch_rdkit_full_trajectory_run_here": false,
+  "native_runtime_checks": "RDKit chemistry self-tests and comparisons to frozen native endpoint/trajectory measurements execute in the user environment.",
+  "source_zip_sha256": "c598c877a8d5550bd30b4bcda97add09408efd305977ab1cb200b75b2cc01500"
+}

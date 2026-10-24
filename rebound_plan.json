@@ -1,0 +1,13 @@
+{
+  "description": "Observe previously completed counterfactuals around transient local changes and recurrence; no new intervention is introduced.",
+  "trial_ids": [
+    "baseline_s47",
+    "s47_c38_L12_self_attention_targeted",
+    "s47_c38_L11_equivariant_feedforward_targeted",
+    "s47_c38_L12_conditional_attention_random1",
+    "s47_time_c31_L12_self_attention"
+  ],
+  "capture_calls": [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43],
+  "track_all_atoms": false,
+  "tracking_rule": "All fixed atoms, focal generated atom, and focal-site neighbors observed in this capture window or final output; generated atom identities are never matched across seeds."
+}

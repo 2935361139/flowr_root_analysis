@@ -1,0 +1,15 @@
+{
+  "case": "bace",
+  "recipient_seed": 50,
+  "donor_seeds": [45, 46, 47, 48, 49, 51],
+  "site": 2,
+  "partner": 3,
+  "target_bond_class": 3,
+  "reference_bond_class": 1,
+  "calls": [0],
+  "layers": [9],
+  "components": ["pairs", "nodes"],
+  "random_controls_per_target": 1,
+  "random_seed": 20261022,
+  "design_note": "Fixed-location donor-sensitivity follow-up to the completed 198-trial discovery scan. Call 0/layer 9/node vectors is the selected candidate; pair vectors are a component comparison. Use every remaining recorded reference seed (45-49, 51), none used as donors to select this location. Same recipient seed 50: this is NOT independent-recipient or cross-molecule validation. Seven baselines + two shams + twelve targeted patches + twelve matched random controls = 33 rollouts. Report all donors and both components, including failures; do not move the location or change the endpoint to obtain a rescue. Future within-layer localization depends on these results."
+}

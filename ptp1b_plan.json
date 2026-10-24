@@ -1,0 +1,9 @@
+{
+  "case": "ptp1b",
+  "seeds": [43, 47, 50],
+  "calls": [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40],
+  "site": 0,
+  "target_bond_class": 1,
+  "hidden_dir": "outputs/sh_hidden_valence_window",
+  "focus_partners": {"43": [22], "47": [15, 17], "50": [25]}
+}

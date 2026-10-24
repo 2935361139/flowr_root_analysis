@@ -1,0 +1,67 @@
+{
+  "source_archive": "feedback_review.zip",
+  "execution_completed": true,
+  "evaluation_complete": true,
+  "completed_trials": 50,
+  "audit_checks_completed_on_uploaded_archive": {
+    "program_hashes": 9,
+    "output_hashes": 400,
+    "coordinate_rows_recomputed": 5050,
+    "raw_sdf_focus_bonds_checked": 50,
+    "reported_sham_call_matches": 1010
+  },
+  "original_tensor_files_not_in_review": 50,
+  "cohort": {
+    "distinct_complex_inputs": 1,
+    "baseline_seeds": 10,
+    "baseline_chemical_fragment_pass": 9,
+    "baseline_failures": 1
+  },
+  "groups": {
+    "sham": {
+      "n": 10,
+      "chemical_fragment_pass": 9,
+      "posebusters_pass": 0
+    },
+    "targeted": {
+      "n": 10,
+      "chemical_fragment_pass": 10,
+      "posebusters_pass": 0
+    },
+    "random_direction": {
+      "n": 30,
+      "chemical_fragment_pass": 28,
+      "posebusters_pass": 0
+    }
+  },
+  "focal_seed_50": {
+    "sham": {
+      "early_mean_relative_vector_error_A": 1.1813798558724873,
+      "early_mean_expected_bond_probability": 0.4481106571811943,
+      "chemical_fragment_pass": false,
+      "fixed_bond_class": 1
+    },
+    "targeted": {
+      "early_mean_relative_vector_error_A": 0.07703998926193584,
+      "early_mean_expected_bond_probability": 0.9843073686547534,
+      "chemical_fragment_pass": true,
+      "fixed_bond_class": 3,
+      "fixed_rms_A": 0.41838197261164084,
+      "posebusters_failed_checks": [
+        "minimum_distance_to_waters"
+      ]
+    },
+    "random_controls_pass": 1,
+    "random_controls_n": 3
+  },
+  "interpretation": {
+    "supported": "An early self-conditioning geometry intervention has a causal effect on this trajectory and repairs its chemical/fixed-fragment endpoint.",
+    "not_established": [
+      "Unique upstream root cause",
+      "Direction-specific superiority over random controls",
+      "Complete 3D quality",
+      "Cross-ligand/target generalization"
+    ]
+  },
+  "limitations": "CPU audit of uploaded JSON/SDF/source hashes and coordinate histories. No independent GPU/RDKit/PoseBusters rerun. Full tensor equality is from execution receipts; original full .pt files were not in the review."
+}

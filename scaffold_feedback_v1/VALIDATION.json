@@ -1,0 +1,67 @@
+{
+  "software_checks_passed": true,
+  "checks": [
+    {
+      "name": "geometry_controls",
+      "cases": 150,
+      "passed": true,
+      "scope": "centroid, relative vector, scale, dtype, rotation/translation of target, orthogonal norm-matched random directions, RNG isolation, zero delta"
+    },
+    {
+      "name": "plan_and_atom_mapping",
+      "passed": true,
+      "planned_rollouts": 50
+    },
+    {
+      "name": "actual_native_sampler_with_synthetic_tensors",
+      "channels": 5,
+      "site": 0,
+      "partner": 2,
+      "passed": true,
+      "identity_replay_exact": true,
+      "both_patch_types_change_continuation": true,
+      "original_records_unchanged": true,
+      "later_states_not_overwritten": true,
+      "full_random_stream_matched": true,
+      "wrong_reference_and_state_drift_rejected": true,
+      "cleanup_on_error": true
+    },
+    {
+      "name": "actual_native_sampler_with_synthetic_tensors",
+      "channels": 11,
+      "site": 1,
+      "partner": 4,
+      "passed": true,
+      "identity_replay_exact": true,
+      "both_patch_types_change_continuation": true,
+      "original_records_unchanged": true,
+      "later_states_not_overwritten": true,
+      "full_random_stream_matched": true,
+      "wrong_reference_and_state_drift_rejected": true,
+      "cleanup_on_error": true
+    },
+    {
+      "name": "numpy_json_and_nonfinite_rejection",
+      "passed": true
+    },
+    {
+      "name": "CLI_reports_resume_and_tamper_detection_with_mock_runtime",
+      "passed": true,
+      "note": "Preflight and chemistry mocked; real native-sampler synthetic rollouts and real output/resume code exercised."
+    }
+  ],
+  "pretrained_model_executed_here": false,
+  "GPU_experiment_executed_here": false,
+  "limitation": "Software and actual-sampler control-flow checks with synthetic tensors. Scientific effects and GPU equivalence remain to be measured by the mandatory runtime identity replays.",
+  "package_source_sha256": {
+    "run_feedback_path.py": "5efbefddcebaa5e1ce25d1519d2cfa6532ba565278ce73b65397eb18375e98c7",
+    "native_adapter.py": "06ce44887cc623f247a468c4e2eea8df40709335d0df4f3f9a2de878813ba3ae",
+    "feedback_core.py": "5826a24c4a44fa5ae7e5a66c388e8a85ef00db7951f5e7c4ed0eb5576629bdec",
+    "record_adapter.py": "10e128d384cf792d0ef88bd81fcf317910259dda823c1558302cacdcf2fbb407",
+    "feedback_hook.py": "5c5280d299c165f46393b6f9f85b2d18093b056e58c8cebf22a0098032c3c4fc",
+    "adapters/quality.py": "97eda26eca03e1f8dcb3d59b8b33430cbb855e87508eeee20f17905a3fe66f75",
+    "adapters/replay.py": "1d5b6cfef030f85d1b0df939d96b6402d64f68e9b2a8ef0b746c12236a84ff82",
+    "tests/_numpy_native.py": "d9d5800d7bb2e8a647bcae1deb809633d1d33f05d11f83dbf485bf89c5b3364a",
+    "tests/check_feedback.py": "e4124db2ba9a852dcdfb8861ac022e02b4d132a8f2ebf1d2224242726d23d4fb"
+  }
+}

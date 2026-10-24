@@ -1,0 +1,14 @@
+{
+  "n_arrays_checked": 23940,
+  "all_finite": true,
+  "layer_continuity_max_abs": 0.0,
+  "prediction_prob_max_abs_difference": 1.7676282804135468e-07,
+  "all_mappings_consistent": true,
+  "n_seeds": 10,
+  "n_calls_per_seed": 18,
+  "n_verified_replays": 180,
+  "n_ligand_layers": 12,
+  "failed_seed": 50,
+  "control_definition": "Fixed-fragment-preserving controls, not globally PoseBusters-valid samples.",
+  "hidden_review_sha256": "9c6865506a19d15c2d5ae2b2af9da2040d58cc7b20e1777fcfa8395cb4b62195"
+}

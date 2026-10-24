@@ -1,0 +1,11 @@
+{
+  "case": "bace",
+  "seeds": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+  "calls": [0, 1, 2, 3, 4],
+  "site": 2,
+  "partner": 3,
+  "expected_bond_class": 3,
+  "record_root": "outputs/sh_boundary_screen_v1/bace_lig16",
+  "reference_head_dir": "outputs/sh_head_bace_lig16_v3",
+  "design_note": "Read-only early-window observation of all ten existing trajectories. All decoder layers; all valid partners of the fixed attachment atom. Exploratory within one complex, not independent confirmation. Generated slots are not aligned across seeds."
+}

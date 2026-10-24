@@ -1,0 +1,50 @@
+{
+  "version": "2026-10-24.boundary-readout.2",
+  "host": {
+    "python": "3.12.14",
+    "torch": "2.11.0+cpu",
+    "rdkit": "2026.03.6",
+    "numpy": "2.5.2",
+    "cuda_available": false
+  },
+  "tests": [
+    {
+      "script": "check_trace.py",
+      "exit_code": 0,
+      "tests_expected": 9,
+      "output": "test_directional_fixed_identity (__main__.TraceChecks.test_directional_fixed_identity) ... ok\ntest_generic_indices_and_same_reference_controls (__main__.TraceChecks.test_generic_indices_and_same_reference_controls) ... ok\ntest_head_orientation_symmetry (__main__.TraceChecks.test_head_orientation_symmetry) ... ok\ntest_interaction_shared_and_null_groups (__main__.TraceChecks.test_interaction_shared_and_null_groups) ... ok\ntest_known_additive_effects (__main__.TraceChecks.test_known_additive_effects) ... ok\ntest_no_change_has_no_contribution (__main__.TraceChecks.test_no_change_has_no_contribution) ... ok\ntest_permutation_equivariance_of_pair_attribution (__main__.TraceChecks.test_permutation_equivariance_of_pair_attribution) ... ok\ntest_signed_changes_conserve_nonlinear_score (__main__.TraceChecks.test_signed_changes_conserve_nonlinear_score) ... ok\ntest_unknown_is_not_negative (__main__.TraceChecks.test_unknown_is_not_negative) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.032s\n\nOK\n"
+    },
+    {
+      "script": "check_native.py",
+      "exit_code": 0,
+      "tests_expected": 6,
+      "output": "test_all_16_coalitions_and_rng (__main__.NativeChecks.test_all_16_coalitions_and_rng) ... ok\ntest_changed_masks_are_rejected (__main__.NativeChecks.test_changed_masks_are_rejected) ... ok\ntest_detects_real_projection_mismatch (__main__.NativeChecks.test_detects_real_projection_mismatch) ... ok\ntest_full_native_capture_and_each_stage (__main__.NativeChecks.test_full_native_capture_and_each_stage) ... ok\ntest_no_change_exactly_zero_with_live_head (__main__.NativeChecks.test_no_change_exactly_zero_with_live_head) ... ok\ntest_unselected_logits_unchanged (__main__.NativeChecks.test_unselected_logits_unchanged) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.185s\n\nOK\n"
+    },
+    {
+      "script": "check_integration.py",
+      "exit_code": 0,
+      "tests_expected": 4,
+      "output": "Compared contrast_000: constructed_case calls 0->1; all 16 native combinations\ntest_16_path_analysis_preserves_disconnection_and_evidence (__main__.IntegrationChecks.test_16_path_analysis_preserves_disconnection_and_evidence) ... ok\ntest_capture_mismatch_saves_error_and_tensors (__main__.IntegrationChecks.test_capture_mismatch_saves_error_and_tensors) ... ok\ntest_capture_receipts_and_optional_numpy_failure (__main__.IntegrationChecks.test_capture_receipts_and_optional_numpy_failure) ... ok\ntest_native_chemistry_charge_and_virtual_mapping (__main__.IntegrationChecks.test_native_chemistry_charge_and_virtual_mapping) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.060s\n\nOK\n"
+    }
+  ],
+  "total_tests_passed": 19,
+  "actual_head_weights_sha256": "bdbf678da56fff7957147565b9da514959421f865f2971941905bb4b0815bc8b",
+  "audit_plan": {
+    "runs": 30,
+    "captures": 114,
+    "contrasts": 55,
+    "kinds": {
+      "onset": 14,
+      "recovery": 14,
+      "same_input_no_event_control": 27
+    },
+    "potential_local_graph_comparisons": 880
+  },
+  "native_source_hashes_verified": 13,
+  "limitations": [
+    "No full frozen checkpoint or original .pt forward-call files available on this host.",
+    "GPU full-model replay has not been executed here.",
+    "Native-head tests use uploaded real head weights with constructed activations.",
+    "Integration tests use constructed molecules and selected unmodified native builder/chemistry source functions; they are software checks, not research findings."
+  ]
+}

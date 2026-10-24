@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "syntax_and_cli_help": true,
+  "software_tests_passed": 6,
+  "tests": [
+    "input-only selection with history/graph exclusions",
+    "missing evaluation versus molecular failure",
+    "history manifests not generated outcome labels",
+    "synthetic full run and resume without regeneration",
+    "fail-stop and preservation of partial records",
+    "plan and code mutation rejection"
+  ],
+  "helpers_unchanged": true,
+  "helper_sha256": {
+    "helpers/inspect_scaffold_trace.py": "a9ace945f9773545d2129172efdbd2320b0806c09a79a3d0f8dab98f1bed46b3",
+    "helpers/quality.py": "97eda26eca03e1f8dcb3d59b8b33430cbb855e87508eeee20f17905a3fe66f75",
+    "helpers/record_scaffold_run.py": "36876d11827cb59dc31f1034ef89c6d22eb4d7db4037660b16a4f5cb04af3dde"
+  },
+  "run_batch_sha256": "a2cf55db47602b403af573524040cc9c11988ce9b0d1e300295e486103f59896",
+  "not_run_here": [
+    "real RDKit input eligibility",
+    "real new-cohort GPU generation",
+    "new-cohort causal interventions"
+  ],
+  "command": "python scaffold_validation_batch_v1/tests/check_batch.py"
+}

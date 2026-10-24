@@ -1,0 +1,17 @@
+{
+  "case": "ptp1b",
+  "failure": {"seed": 47, "site": 0, "partner": 15},
+  "events": [{"call": 34, "donor_call": 33}, {"call": 38, "donor_call": 37}],
+  "candidates": [
+    {"layer": 12, "module": "self_attention"},
+    {"layer": 12, "module": "conditional_attention"},
+    {"layer": 11, "module": "equivariant_feedforward"}
+  ],
+  "random_direction_replicates": 3,
+  "random_control_seed": 20261020,
+  "time_control_call": 31,
+  "time_control_event_call": 38,
+  "success_controls": [{"seed": 43, "site": 0, "partner": 22}, {"seed": 50, "site": 0, "partner": 25}],
+  "success_control_event": {"call": 38, "donor_call": 37},
+  "scope": "Exploratory single-complex causal localization. Only the generated endpoint vector write is modified once. Temporal donors are not independent healthy trajectories. No SHAP or unique-root-cause claim."
+}

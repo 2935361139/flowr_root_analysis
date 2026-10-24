@@ -70,3 +70,11 @@ flowr_code.html
 
 # FLOWR.ui writes saved ligands here (POST /save-all-ligands)
 output/
+
+# Local environments and cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*Zone.Identifier
+.env

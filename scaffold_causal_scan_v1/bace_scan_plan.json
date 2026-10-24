@@ -1,0 +1,32 @@
+{
+  "case": "bace",
+  "recipient_seed": 50,
+  "donor_seeds": [
+    42,
+    43,
+    44
+  ],
+  "site": 2,
+  "partner": 3,
+  "target_bond_class": 3,
+  "reference_bond_class": 1,
+  "calls": [
+    0,
+    3,
+    25,
+    32
+  ],
+  "layers": [
+    3,
+    6,
+    9,
+    12
+  ],
+  "components": [
+    "pairs",
+    "nodes"
+  ],
+  "random_controls_per_target": 1,
+  "random_seed": 20261022,
+  "design_note": "Bounded coarse exploratory grid spanning early prediction, transient no-bond onset, external-connection conflict and persistent flip. Three donors are the first three recorded fragment-preserving seeds, selected before interventions. No causal effect assumed."
+}

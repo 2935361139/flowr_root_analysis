@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "combined_observer_fixtures": [
+    {
+      "atoms": 7,
+      "channels": 5,
+      "tracked": [
+        4,
+        2
+      ],
+      "all_five_observers_combined": true,
+      "original_control_flow": true,
+      "no_prediction_change": true,
+      "scalar_residual_check": true,
+      "geometry_residual_check": true,
+      "hook_cleanup": true,
+      "corrupt_scalar_rejected": true
+    },
+    {
+      "atoms": 10,
+      "channels": 11,
+      "tracked": [
+        7,
+        3
+      ],
+      "all_five_observers_combined": true,
+      "original_control_flow": true,
+      "no_prediction_change": true,
+      "scalar_residual_check": true,
+      "geometry_residual_check": true,
+      "hook_cleanup": true,
+      "corrupt_scalar_rejected": true
+    }
+  ],
+  "synthetic_analysis": {
+    "accepted_states": 6,
+    "final_focus_status": [
+      {
+        "seed": 103,
+        "final_focus_bond_class": 3,
+        "final_focus_bond_matches_expected": true,
+        "final_site_atom_class": 4,
+        "final_partner_atom_class": 4,
+        "interpretation": "Focus-bond endpoint only; not overall scaffold-hopping success."
+      },
+      {
+        "seed": 107,
+        "final_focus_bond_class": 1,
+        "final_focus_bond_matches_expected": false,
+        "final_site_atom_class": 4,
+        "final_partner_atom_class": 4,
+        "interpretation": "Focus-bond endpoint only; not overall scaffold-hopping success."
+      }
+    ],
+    "pair_state_rows": 130,
+    "head_change_rows": 84,
+    "coordinate_change_rows": 20,
+    "max_head_accounting_residual": 2.220446049250313e-16,
+    "max_coordinate_accounting_residual": 1.4210854715202004e-14,
+    "max_branch_accounting_residual": 4.440892098500626e-16,
+    "head_precision_review_rows": 0
+  },
+  "real_previously_accepted_head_transition_recomputed": -2.068864583969116,
+  "initial_zero_self_condition_is_unknown": true,
+  "corrupt_capture_rejected": true,
+  "error_bundle_created": true,
+  "native_pretrained_GPU_execution_performed_here": false,
+  "limitation": "No torch/RDKit in this runtime. Native GPU replay, source/weight identities and numerical checks are mandatory during user execution. Synthetic fixtures are not research results."
+}

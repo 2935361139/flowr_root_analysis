@@ -1,0 +1,35 @@
+{
+  "synthetic_native_sampler_regression": [
+    {
+      "channels": 5,
+      "site": 0,
+      "partner": 2,
+      "baseline_and_shams_exact": true,
+      "both_patch_modes_change_final_output": true,
+      "rng_matches": true,
+      "wrong_reference_rejected": true,
+      "cleanup_on_exception": true
+    },
+    {
+      "channels": 11,
+      "site": 1,
+      "partner": 4,
+      "baseline_and_shams_exact": true,
+      "both_patch_modes_change_final_output": true,
+      "rng_matches": true,
+      "wrong_reference_rejected": true,
+      "cleanup_on_exception": true
+    }
+  ],
+  "planned_rollouts": 198,
+  "deterministic_norm_controls_and_rng_isolation": true,
+  "uploaded_40_readout_transitions_recomputed": true,
+  "readout_recompute_max_error": 0.0,
+  "pretrained_gpu_interventions_executed_here": false,
+  "limitation": "Synthetic control-flow and real saved-readout checks; the new native GPU scan must pass its runtime baseline/sham gates in the original environment.",
+  "code_sha256": {
+    "scan_causal_features.py": "1d692c91982b11595dc621bda971f9f1becf485023d6bdf242b682cd4814cf78",
+    "evaluate_scaffold_outputs.py": "97eda26eca03e1f8dcb3d59b8b33430cbb855e87508eeee20f17905a3fe66f75",
+    "native_adapter.py": "99b694cc265d831c26ffbadd6991b2dd40cc4a1692dddc46c7becf5eafe7e117"
+  }
+}

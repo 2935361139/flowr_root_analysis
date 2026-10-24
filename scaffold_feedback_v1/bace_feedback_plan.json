@@ -1,0 +1,22 @@
+{
+  "case": "bace",
+  "seeds": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+  "focus": {
+    "site_reference_index": 22,
+    "partner_reference_index": 23,
+    "expected_bond_class": 3
+  },
+  "intervention_call": 1,
+  "early_calls": [1, 2, 3, 4],
+  "random_controls": 3,
+  "control_seed": 20261023,
+  "expected_inpaint_self_condition": false,
+  "expected_final_inpaint": false,
+  "record_root": "outputs/sh_boundary_screen_v1/bace_lig16",
+  "head_dir": "outputs/sh_head_bace_lig16_v3",
+  "output_dir": "outputs/sh_feedback_bace_lig16_v1",
+  "hypothesis": "The first predicted fixed-pair geometric deviation, when fed into call 1, affects subsequent predictions and may influence terminal fixed-fragment preservation.",
+  "primary_observation": "Mean relative-vector error in Angstrom over calls 1-4, relative to the fixed input; paired against the same-seed sham.",
+  "secondary_observations": "Expected-bond probability over calls 1-4, complete raw network trajectory, and separate terminal chemistry, fixed-fragment, geometry, and scaffold-change endpoints.",
+  "scope": "One-complex exploratory causal test. Not a unique-root-cause claim or independent generalization test. No outcome-driven changes to call, magnitude, pair, or control count."
+}

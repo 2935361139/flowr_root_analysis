@@ -1,0 +1,396 @@
+{
+  "completed": true,
+  "rdkit_version": "2026.03.6",
+  "checks_passed": 163,
+  "checks": [
+    "real_failed_seed47_is_connected",
+    "real_failed_seed47_detects_site0_neutral_carbon_overvalence",
+    "invalid_decode_does_not_imply_raw_fixed_identity_changed",
+    "real_failure_carbon_bond_order_sum_5",
+    "same_real_failure_detected_after_slot_permutation",
+    "permutation_keeps_component_and_identity_results",
+    "real_success_seed43_no_false_carbon_failure",
+    "real_success_seed50_no_false_carbon_failure",
+    "disconnection_is_distinct_from_carbon_overvalence",
+    "asymmetric_bonds_report_an_evaluation_issue",
+    "unknown_is_not_failed",
+    "known_failure_with_unknown_is_failed",
+    "no_flags_invented_for_unevaluated_checks",
+    "ptp1b_42_raw_independent_sanitization_matches_record",
+    "ptp1b_42_raw_independent_connectivity_matches_record",
+    "ptp1b_42_run_decode_independent_sanitization_matches_record",
+    "ptp1b_42_run_decode_independent_connectivity_matches_record",
+    "ptp1b_43_same_task_profile",
+    "ptp1b_43_raw_independent_sanitization_matches_record",
+    "ptp1b_43_raw_independent_connectivity_matches_record",
+    "ptp1b_43_run_decode_independent_sanitization_matches_record",
+    "ptp1b_43_run_decode_independent_connectivity_matches_record",
+    "ptp1b_44_same_task_profile",
+    "ptp1b_44_raw_independent_sanitization_matches_record",
+    "ptp1b_44_raw_independent_connectivity_matches_record",
+    "ptp1b_44_run_decode_independent_sanitization_matches_record",
+    "ptp1b_44_run_decode_independent_connectivity_matches_record",
+    "ptp1b_45_same_task_profile",
+    "ptp1b_45_raw_independent_sanitization_matches_record",
+    "ptp1b_45_raw_independent_connectivity_matches_record",
+    "ptp1b_45_run_decode_independent_sanitization_matches_record",
+    "ptp1b_45_run_decode_independent_connectivity_matches_record",
+    "ptp1b_46_same_task_profile",
+    "ptp1b_46_raw_independent_sanitization_matches_record",
+    "ptp1b_46_raw_independent_connectivity_matches_record",
+    "ptp1b_46_run_decode_independent_sanitization_matches_record",
+    "ptp1b_46_run_decode_independent_connectivity_matches_record",
+    "ptp1b_47_same_task_profile",
+    "ptp1b_47_raw_empty_sdf_matches_missing_decode",
+    "ptp1b_47_run_decode_independent_sanitization_matches_record",
+    "ptp1b_47_run_decode_independent_connectivity_matches_record",
+    "ptp1b_48_same_task_profile",
+    "ptp1b_48_raw_independent_sanitization_matches_record",
+    "ptp1b_48_raw_independent_connectivity_matches_record",
+    "ptp1b_48_run_decode_independent_sanitization_matches_record",
+    "ptp1b_48_run_decode_independent_connectivity_matches_record",
+    "ptp1b_49_same_task_profile",
+    "ptp1b_49_raw_independent_sanitization_matches_record",
+    "ptp1b_49_raw_independent_connectivity_matches_record",
+    "ptp1b_49_run_decode_independent_sanitization_matches_record",
+    "ptp1b_49_run_decode_independent_connectivity_matches_record",
+    "ptp1b_50_same_task_profile",
+    "ptp1b_50_raw_independent_sanitization_matches_record",
+    "ptp1b_50_raw_independent_connectivity_matches_record",
+    "ptp1b_50_run_decode_independent_sanitization_matches_record",
+    "ptp1b_50_run_decode_independent_connectivity_matches_record",
+    "ptp1b_51_same_task_profile",
+    "ptp1b_51_raw_independent_sanitization_matches_record",
+    "ptp1b_51_raw_independent_connectivity_matches_record",
+    "ptp1b_51_run_decode_independent_sanitization_matches_record",
+    "ptp1b_51_run_decode_independent_connectivity_matches_record",
+    "bace_42_raw_independent_sanitization_matches_record",
+    "bace_42_raw_independent_connectivity_matches_record",
+    "bace_42_run_decode_independent_sanitization_matches_record",
+    "bace_42_run_decode_independent_connectivity_matches_record",
+    "bace_43_same_task_profile",
+    "bace_43_raw_independent_sanitization_matches_record",
+    "bace_43_raw_independent_connectivity_matches_record",
+    "bace_43_run_decode_independent_sanitization_matches_record",
+    "bace_43_run_decode_independent_connectivity_matches_record",
+    "bace_44_same_task_profile",
+    "bace_44_raw_independent_sanitization_matches_record",
+    "bace_44_raw_independent_connectivity_matches_record",
+    "bace_44_run_decode_independent_sanitization_matches_record",
+    "bace_44_run_decode_independent_connectivity_matches_record",
+    "bace_45_same_task_profile",
+    "bace_45_raw_independent_sanitization_matches_record",
+    "bace_45_raw_independent_connectivity_matches_record",
+    "bace_45_run_decode_independent_sanitization_matches_record",
+    "bace_45_run_decode_independent_connectivity_matches_record",
+    "bace_46_same_task_profile",
+    "bace_46_raw_independent_sanitization_matches_record",
+    "bace_46_raw_independent_connectivity_matches_record",
+    "bace_46_run_decode_independent_sanitization_matches_record",
+    "bace_46_run_decode_independent_connectivity_matches_record",
+    "bace_47_same_task_profile",
+    "bace_47_raw_independent_sanitization_matches_record",
+    "bace_47_raw_independent_connectivity_matches_record",
+    "bace_47_run_decode_independent_sanitization_matches_record",
+    "bace_47_run_decode_independent_connectivity_matches_record",
+    "bace_48_same_task_profile",
+    "bace_48_raw_independent_sanitization_matches_record",
+    "bace_48_raw_independent_connectivity_matches_record",
+    "bace_48_run_decode_independent_sanitization_matches_record",
+    "bace_48_run_decode_independent_connectivity_matches_record",
+    "bace_49_same_task_profile",
+    "bace_49_raw_independent_sanitization_matches_record",
+    "bace_49_raw_independent_connectivity_matches_record",
+    "bace_49_run_decode_independent_sanitization_matches_record",
+    "bace_49_run_decode_independent_connectivity_matches_record",
+    "bace_50_same_task_profile",
+    "bace_50_raw_independent_sanitization_matches_record",
+    "bace_50_raw_independent_connectivity_matches_record",
+    "bace_50_run_decode_independent_sanitization_matches_record",
+    "bace_50_run_decode_independent_connectivity_matches_record",
+    "bace_51_same_task_profile",
+    "bace_51_raw_independent_sanitization_matches_record",
+    "bace_51_raw_independent_connectivity_matches_record",
+    "bace_51_run_decode_independent_sanitization_matches_record",
+    "bace_51_run_decode_independent_connectivity_matches_record",
+    "cdk2_42_raw_independent_sanitization_matches_record",
+    "cdk2_42_raw_independent_connectivity_matches_record",
+    "cdk2_42_run_decode_independent_sanitization_matches_record",
+    "cdk2_42_run_decode_independent_connectivity_matches_record",
+    "cdk2_43_same_task_profile",
+    "cdk2_43_raw_independent_sanitization_matches_record",
+    "cdk2_43_raw_independent_connectivity_matches_record",
+    "cdk2_43_run_decode_independent_sanitization_matches_record",
+    "cdk2_43_run_decode_independent_connectivity_matches_record",
+    "cdk2_44_same_task_profile",
+    "cdk2_44_raw_independent_sanitization_matches_record",
+    "cdk2_44_raw_independent_connectivity_matches_record",
+    "cdk2_44_run_decode_independent_sanitization_matches_record",
+    "cdk2_44_run_decode_independent_connectivity_matches_record",
+    "cdk2_45_same_task_profile",
+    "cdk2_45_raw_independent_sanitization_matches_record",
+    "cdk2_45_raw_independent_connectivity_matches_record",
+    "cdk2_45_run_decode_independent_sanitization_matches_record",
+    "cdk2_45_run_decode_independent_connectivity_matches_record",
+    "cdk2_46_same_task_profile",
+    "cdk2_46_raw_independent_sanitization_matches_record",
+    "cdk2_46_raw_independent_connectivity_matches_record",
+    "cdk2_46_run_decode_independent_sanitization_matches_record",
+    "cdk2_46_run_decode_independent_connectivity_matches_record",
+    "cdk2_47_same_task_profile",
+    "cdk2_47_raw_independent_sanitization_matches_record",
+    "cdk2_47_raw_independent_connectivity_matches_record",
+    "cdk2_47_run_decode_independent_sanitization_matches_record",
+    "cdk2_47_run_decode_independent_connectivity_matches_record",
+    "cdk2_48_same_task_profile",
+    "cdk2_48_raw_independent_sanitization_matches_record",
+    "cdk2_48_raw_independent_connectivity_matches_record",
+    "cdk2_48_run_decode_independent_sanitization_matches_record",
+    "cdk2_48_run_decode_independent_connectivity_matches_record",
+    "cdk2_49_same_task_profile",
+    "cdk2_49_raw_independent_sanitization_matches_record",
+    "cdk2_49_raw_independent_connectivity_matches_record",
+    "cdk2_49_run_decode_independent_sanitization_matches_record",
+    "cdk2_49_run_decode_independent_connectivity_matches_record",
+    "cdk2_50_same_task_profile",
+    "cdk2_50_raw_independent_sanitization_matches_record",
+    "cdk2_50_raw_independent_connectivity_matches_record",
+    "cdk2_50_run_decode_independent_sanitization_matches_record",
+    "cdk2_50_run_decode_independent_connectivity_matches_record",
+    "cdk2_51_same_task_profile",
+    "cdk2_51_raw_independent_sanitization_matches_record",
+    "cdk2_51_raw_independent_connectivity_matches_record",
+    "cdk2_51_run_decode_independent_sanitization_matches_record",
+    "cdk2_51_run_decode_independent_connectivity_matches_record",
+    "bace_has_three_isolated_fixed_atoms",
+    "cdk2_has_one_fixed_bromine",
+    "all_twenty_new_raw_molecules_valid_and_connected",
+    "cdk2_scaffold_identity_is_not_a_connection_failure"
+  ],
+  "observed": {
+    "ptp1b": {
+      "n_runs": 10,
+      "raw_valid_connected": 9,
+      "run_decode_valid_connected": 10,
+      "raw_scaffold_changed": 9,
+      "raw_scaffold_evaluated": 9,
+      "task_profile": {
+        "n_fixed_atoms": 9,
+        "n_generated_slots": 18,
+        "n_fixed_components": 3,
+        "fixed_component_sizes": [
+          5,
+          3,
+          1
+        ],
+        "all_fixed_components_are_single_atoms": false,
+        "n_reference_attachment_sites": 3,
+        "attachment_sampler_indices": [
+          0,
+          3,
+          4
+        ],
+        "fixed_internal_bonds": [
+          [
+            1,
+            0,
+            "DOUBLE"
+          ],
+          [
+            2,
+            0,
+            "SINGLE"
+          ],
+          [
+            5,
+            4,
+            "SINGLE"
+          ],
+          [
+            6,
+            5,
+            "SINGLE"
+          ],
+          [
+            7,
+            6,
+            "SINGLE"
+          ],
+          [
+            8,
+            6,
+            "DOUBLE"
+          ]
+        ],
+        "fixed_sites": [
+          {
+            "sampler_index": 0,
+            "reference_index": 5,
+            "element": "C",
+            "formal_charge": 0,
+            "reference_fixed_internal_bond_order_sum": 3.0,
+            "reference_attachment_site": true
+          },
+          {
+            "sampler_index": 1,
+            "reference_index": 6,
+            "element": "O",
+            "formal_charge": 0,
+            "reference_fixed_internal_bond_order_sum": 2.0,
+            "reference_attachment_site": false
+          },
+          {
+            "sampler_index": 2,
+            "reference_index": 7,
+            "element": "O",
+            "formal_charge": -1,
+            "reference_fixed_internal_bond_order_sum": 1.0,
+            "reference_attachment_site": false
+          },
+          {
+            "sampler_index": 3,
+            "reference_index": 14,
+            "element": "Br",
+            "formal_charge": 0,
+            "reference_fixed_internal_bond_order_sum": 0,
+            "reference_attachment_site": true
+          },
+          {
+            "sampler_index": 4,
+            "reference_index": 15,
+            "element": "O",
+            "formal_charge": 0,
+            "reference_fixed_internal_bond_order_sum": 1.0,
+            "reference_attachment_site": true
+          },
+          {
+            "sampler_index": 5,
+            "reference_index": 16,
+            "element": "C",
+            "formal_charge": 0,
+            "reference_fixed_internal_bond_order_sum": 2.0,
+            "reference_attachment_site": false
+          },
+          {
+            "sampler_index": 6,
+            "reference_index": 17,
+            "element": "C",
+            "formal_charge": 0,
+            "reference_fixed_internal_bond_order_sum": 4.0,
+            "reference_attachment_site": false
+          },
+          {
+            "sampler_index": 7,
+            "reference_index": 18,
+            "element": "O",
+            "formal_charge": -1,
+            "reference_fixed_internal_bond_order_sum": 1.0,
+            "reference_attachment_site": false
+          },
+          {
+            "sampler_index": 8,
+            "reference_index": 19,
+            "element": "O",
+            "formal_charge": 0,
+            "reference_fixed_internal_bond_order_sum": 2.0,
+            "reference_attachment_site": false
+          }
+        ],
+        "note": "Task descriptors, not a ranking of difficulty or an outcome-based exclusion rule."
+      },
+      "independent_molecules_checked": 19
+    },
+    "bace": {
+      "n_runs": 10,
+      "raw_valid_connected": 10,
+      "run_decode_valid_connected": 10,
+      "raw_scaffold_changed": 10,
+      "raw_scaffold_evaluated": 10,
+      "task_profile": {
+        "n_fixed_atoms": 3,
+        "n_generated_slots": 24,
+        "n_fixed_components": 3,
+        "fixed_component_sizes": [
+          1,
+          1,
+          1
+        ],
+        "all_fixed_components_are_single_atoms": true,
+        "n_reference_attachment_sites": 3,
+        "attachment_sampler_indices": [
+          0,
+          1,
+          2
+        ],
+        "fixed_internal_bonds": [],
+        "fixed_sites": [
+          {
+            "sampler_index": 0,
+            "reference_index": 0,
+            "element": "C",
+            "formal_charge": 0,
+            "reference_fixed_internal_bond_order_sum": 0,
+            "reference_attachment_site": true
+          },
+          {
+            "sampler_index": 1,
+            "reference_index": 3,
+            "element": "N",
+            "formal_charge": 0,
+            "reference_fixed_internal_bond_order_sum": 0,
+            "reference_attachment_site": true
+          },
+          {
+            "sampler_index": 2,
+            "reference_index": 16,
+            "element": "Cl",
+            "formal_charge": 0,
+            "reference_fixed_internal_bond_order_sum": 0,
+            "reference_attachment_site": true
+          }
+        ],
+        "note": "Task descriptors, not a ranking of difficulty or an outcome-based exclusion rule."
+      },
+      "independent_molecules_checked": 20
+    },
+    "cdk2": {
+      "n_runs": 10,
+      "raw_valid_connected": 10,
+      "run_decode_valid_connected": 10,
+      "raw_scaffold_changed": 4,
+      "raw_scaffold_evaluated": 10,
+      "task_profile": {
+        "n_fixed_atoms": 1,
+        "n_generated_slots": 24,
+        "n_fixed_components": 1,
+        "fixed_component_sizes": [
+          1
+        ],
+        "all_fixed_components_are_single_atoms": true,
+        "n_reference_attachment_sites": 1,
+        "attachment_sampler_indices": [
+          0
+        ],
+        "fixed_internal_bonds": [],
+        "fixed_sites": [
+          {
+            "sampler_index": 0,
+            "reference_index": 24,
+            "element": "Br",
+            "formal_charge": 0,
+            "reference_fixed_internal_bond_order_sum": 0,
+            "reference_attachment_site": true
+          }
+        ],
+        "note": "Task descriptors, not a ranking of difficulty or an outcome-based exclusion rule."
+      },
+      "independent_molecules_checked": 20
+    }
+  },
+  "limitations": [
+    "Full CLI not executed here: the user repository, PyTorch environment and protein PDB inputs are required for original-runtime PoseBusters and tensor/SDF mapping checks.",
+    "Tests on available final tensors cover the real failed PTP1B example and two real comparison runs; new BACE/CDK2 archives omit final tensors.",
+    "Input archives and old scripts were not modified."
+  ],
+  "evaluator_sha256": "97eda26eca03e1f8dcb3d59b8b33430cbb855e87508eeee20f17905a3fe66f75"
+}

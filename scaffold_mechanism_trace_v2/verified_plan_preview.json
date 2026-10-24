@@ -1,0 +1,933 @@
+{
+  "jobs": [
+    {
+      "run": "ptp1b_lig1_seed42",
+      "before": 1,
+      "after": 2,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "onset",
+      "terminal_segment_onset": false,
+      "id": "contrast_000"
+    },
+    {
+      "run": "ptp1b_lig1_seed42",
+      "before": 12,
+      "after": 13,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_001"
+    },
+    {
+      "run": "ptp1b_lig1_seed42",
+      "before": 21,
+      "after": 22,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "onset",
+      "terminal_segment_onset": false,
+      "id": "contrast_002"
+    },
+    {
+      "run": "ptp1b_lig1_seed42",
+      "before": 22,
+      "after": 23,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_003"
+    },
+    {
+      "run": "ptp1b_lig1_seed42",
+      "before": 23,
+      "after": 24,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "onset",
+      "terminal_segment_onset": false,
+      "id": "contrast_004"
+    },
+    {
+      "run": "ptp1b_lig1_seed42",
+      "before": 24,
+      "after": 25,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_005"
+    },
+    {
+      "run": "ptp1b_lig1_seed42",
+      "before": 51,
+      "after": 52,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "onset",
+      "terminal_segment_onset": true,
+      "id": "contrast_006"
+    },
+    {
+      "run": "ptp1b_lig1_seed45",
+      "before": 3,
+      "after": 4,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "onset",
+      "terminal_segment_onset": false,
+      "id": "contrast_007"
+    },
+    {
+      "run": "ptp1b_lig1_seed45",
+      "before": 4,
+      "after": 5,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_008"
+    },
+    {
+      "run": "ptp1b_lig1_seed45",
+      "before": 10,
+      "after": 11,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "onset",
+      "terminal_segment_onset": false,
+      "id": "contrast_009"
+    },
+    {
+      "run": "ptp1b_lig1_seed45",
+      "before": 12,
+      "after": 13,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_010"
+    },
+    {
+      "run": "ptp1b_lig1_seed45",
+      "before": 15,
+      "after": 16,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "onset",
+      "terminal_segment_onset": false,
+      "id": "contrast_011"
+    },
+    {
+      "run": "ptp1b_lig1_seed45",
+      "before": 16,
+      "after": 17,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_012"
+    },
+    {
+      "run": "ptp1b_lig1_seed50",
+      "before": 0,
+      "after": 1,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "onset",
+      "terminal_segment_onset": false,
+      "id": "contrast_013"
+    },
+    {
+      "run": "ptp1b_lig1_seed50",
+      "before": 1,
+      "after": 2,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_014"
+    },
+    {
+      "run": "tyk2_lig3_seed44",
+      "before": 16,
+      "after": 17,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "onset",
+      "terminal_segment_onset": false,
+      "id": "contrast_015"
+    },
+    {
+      "run": "tyk2_lig3_seed44",
+      "before": 17,
+      "after": 18,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_016"
+    },
+    {
+      "run": "tyk2_lig3_seed44",
+      "before": 36,
+      "after": 37,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "onset",
+      "terminal_segment_onset": false,
+      "id": "contrast_017"
+    },
+    {
+      "run": "tyk2_lig3_seed44",
+      "before": 39,
+      "after": 40,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_018"
+    },
+    {
+      "run": "tyk2_lig3_seed47",
+      "before": 1,
+      "after": 2,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "onset",
+      "terminal_segment_onset": false,
+      "id": "contrast_019"
+    },
+    {
+      "run": "tyk2_lig3_seed47",
+      "before": 2,
+      "after": 3,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_020"
+    },
+    {
+      "run": "tyk2_lig3_seed47",
+      "before": 19,
+      "after": 20,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "onset",
+      "terminal_segment_onset": false,
+      "id": "contrast_021"
+    },
+    {
+      "run": "tyk2_lig3_seed47",
+      "before": 20,
+      "after": 21,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_022"
+    },
+    {
+      "run": "tyk2_lig3_seed48",
+      "before": 0,
+      "after": 1,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_023"
+    },
+    {
+      "run": "tyk2_lig3_seed48",
+      "before": 8,
+      "after": 9,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "onset",
+      "terminal_segment_onset": false,
+      "id": "contrast_024"
+    },
+    {
+      "run": "tyk2_lig3_seed48",
+      "before": 9,
+      "after": 10,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_025"
+    },
+    {
+      "run": "tyk2_lig3_seed48",
+      "before": 18,
+      "after": 19,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "onset",
+      "terminal_segment_onset": false,
+      "id": "contrast_026"
+    },
+    {
+      "run": "tyk2_lig3_seed48",
+      "before": 21,
+      "after": 22,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "recovery",
+      "terminal_segment_onset": false,
+      "id": "contrast_027"
+    },
+    {
+      "run": "ptp1b_lig1_seed43",
+      "before": 1,
+      "after": 2,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed42",
+          "after": 2,
+          "kind": "onset"
+        },
+        {
+          "run": "ptp1b_lig1_seed50",
+          "after": 2,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_028"
+    },
+    {
+      "run": "ptp1b_lig1_seed43",
+      "before": 12,
+      "after": 13,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed42",
+          "after": 13,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_029"
+    },
+    {
+      "run": "ptp1b_lig1_seed43",
+      "before": 21,
+      "after": 22,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed42",
+          "after": 22,
+          "kind": "onset"
+        }
+      ],
+      "id": "contrast_030"
+    },
+    {
+      "run": "ptp1b_lig1_seed43",
+      "before": 22,
+      "after": 23,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed42",
+          "after": 23,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_031"
+    },
+    {
+      "run": "ptp1b_lig1_seed43",
+      "before": 23,
+      "after": 24,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed42",
+          "after": 24,
+          "kind": "onset"
+        }
+      ],
+      "id": "contrast_032"
+    },
+    {
+      "run": "ptp1b_lig1_seed43",
+      "before": 24,
+      "after": 25,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed42",
+          "after": 25,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_033"
+    },
+    {
+      "run": "ptp1b_lig1_seed43",
+      "before": 51,
+      "after": 52,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed42",
+          "after": 52,
+          "kind": "onset"
+        }
+      ],
+      "id": "contrast_034"
+    },
+    {
+      "run": "ptp1b_lig1_seed42",
+      "before": 3,
+      "after": 4,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed45",
+          "after": 4,
+          "kind": "onset"
+        }
+      ],
+      "id": "contrast_035"
+    },
+    {
+      "run": "ptp1b_lig1_seed42",
+      "before": 4,
+      "after": 5,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed45",
+          "after": 5,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_036"
+    },
+    {
+      "run": "ptp1b_lig1_seed42",
+      "before": 10,
+      "after": 11,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed45",
+          "after": 11,
+          "kind": "onset"
+        }
+      ],
+      "id": "contrast_037"
+    },
+    {
+      "run": "ptp1b_lig1_seed42",
+      "before": 12,
+      "after": 13,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed45",
+          "after": 13,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_038"
+    },
+    {
+      "run": "ptp1b_lig1_seed42",
+      "before": 15,
+      "after": 16,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed45",
+          "after": 16,
+          "kind": "onset"
+        }
+      ],
+      "id": "contrast_039"
+    },
+    {
+      "run": "ptp1b_lig1_seed42",
+      "before": 16,
+      "after": 17,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed45",
+          "after": 17,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_040"
+    },
+    {
+      "run": "ptp1b_lig1_seed43",
+      "before": 0,
+      "after": 1,
+      "site": 3,
+      "event": "fixed_chemistry_problem:AtomValenceException:3",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "ptp1b_lig1_seed50",
+          "after": 1,
+          "kind": "onset"
+        }
+      ],
+      "id": "contrast_041"
+    },
+    {
+      "run": "tyk2_lig3_seed42",
+      "before": 16,
+      "after": 17,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "tyk2_lig3_seed44",
+          "after": 17,
+          "kind": "onset"
+        }
+      ],
+      "id": "contrast_042"
+    },
+    {
+      "run": "tyk2_lig3_seed42",
+      "before": 17,
+      "after": 18,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "tyk2_lig3_seed44",
+          "after": 18,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_043"
+    },
+    {
+      "run": "tyk2_lig3_seed42",
+      "before": 36,
+      "after": 37,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "tyk2_lig3_seed44",
+          "after": 37,
+          "kind": "onset"
+        }
+      ],
+      "id": "contrast_044"
+    },
+    {
+      "run": "tyk2_lig3_seed42",
+      "before": 39,
+      "after": 40,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "tyk2_lig3_seed44",
+          "after": 40,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_045"
+    },
+    {
+      "run": "tyk2_lig3_seed42",
+      "before": 1,
+      "after": 2,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "tyk2_lig3_seed47",
+          "after": 2,
+          "kind": "onset"
+        }
+      ],
+      "id": "contrast_046"
+    },
+    {
+      "run": "tyk2_lig3_seed42",
+      "before": 2,
+      "after": 3,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "tyk2_lig3_seed47",
+          "after": 3,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_047"
+    },
+    {
+      "run": "tyk2_lig3_seed42",
+      "before": 19,
+      "after": 20,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "tyk2_lig3_seed47",
+          "after": 20,
+          "kind": "onset"
+        }
+      ],
+      "id": "contrast_048"
+    },
+    {
+      "run": "tyk2_lig3_seed42",
+      "before": 20,
+      "after": 21,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "tyk2_lig3_seed47",
+          "after": 21,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_049"
+    },
+    {
+      "run": "tyk2_lig3_seed42",
+      "before": 0,
+      "after": 1,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "tyk2_lig3_seed48",
+          "after": 1,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_050"
+    },
+    {
+      "run": "tyk2_lig3_seed42",
+      "before": 8,
+      "after": 9,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "tyk2_lig3_seed48",
+          "after": 9,
+          "kind": "onset"
+        }
+      ],
+      "id": "contrast_051"
+    },
+    {
+      "run": "tyk2_lig3_seed42",
+      "before": 9,
+      "after": 10,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "tyk2_lig3_seed48",
+          "after": 10,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_052"
+    },
+    {
+      "run": "tyk2_lig3_seed42",
+      "before": 18,
+      "after": 19,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "tyk2_lig3_seed48",
+          "after": 19,
+          "kind": "onset"
+        }
+      ],
+      "id": "contrast_053"
+    },
+    {
+      "run": "tyk2_lig3_seed42",
+      "before": 21,
+      "after": 22,
+      "site": 0,
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "kind": "same_input_no_event_control",
+      "terminal_segment_onset": false,
+      "matched_events": [
+        {
+          "run": "tyk2_lig3_seed48",
+          "after": 22,
+          "kind": "recovery"
+        }
+      ],
+      "id": "contrast_054"
+    }
+  ],
+  "captures": {
+    "cdk2_lig1_seed42": [
+      100
+    ],
+    "cdk2_lig1_seed43": [
+      100
+    ],
+    "cdk2_lig1_seed44": [
+      100
+    ],
+    "cdk2_lig1_seed45": [
+      100
+    ],
+    "cdk2_lig1_seed46": [
+      100
+    ],
+    "cdk2_lig1_seed47": [
+      100
+    ],
+    "cdk2_lig1_seed48": [
+      100
+    ],
+    "cdk2_lig1_seed49": [
+      100
+    ],
+    "cdk2_lig1_seed50": [
+      100
+    ],
+    "cdk2_lig1_seed51": [
+      100
+    ],
+    "ptp1b_lig1_seed42": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      21,
+      22,
+      23,
+      24,
+      25,
+      51,
+      52,
+      100
+    ],
+    "ptp1b_lig1_seed43": [
+      0,
+      1,
+      2,
+      12,
+      13,
+      21,
+      22,
+      23,
+      24,
+      25,
+      51,
+      52,
+      100
+    ],
+    "ptp1b_lig1_seed44": [
+      100
+    ],
+    "ptp1b_lig1_seed45": [
+      3,
+      4,
+      5,
+      10,
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      100
+    ],
+    "ptp1b_lig1_seed46": [
+      100
+    ],
+    "ptp1b_lig1_seed47": [
+      100
+    ],
+    "ptp1b_lig1_seed48": [
+      100
+    ],
+    "ptp1b_lig1_seed49": [
+      100
+    ],
+    "ptp1b_lig1_seed50": [
+      0,
+      1,
+      2,
+      100
+    ],
+    "ptp1b_lig1_seed51": [
+      100
+    ],
+    "tyk2_lig3_seed42": [
+      0,
+      1,
+      2,
+      3,
+      8,
+      9,
+      10,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      36,
+      37,
+      39,
+      40,
+      100
+    ],
+    "tyk2_lig3_seed43": [
+      100
+    ],
+    "tyk2_lig3_seed44": [
+      16,
+      17,
+      18,
+      36,
+      37,
+      39,
+      40,
+      100
+    ],
+    "tyk2_lig3_seed45": [
+      100
+    ],
+    "tyk2_lig3_seed46": [
+      100
+    ],
+    "tyk2_lig3_seed47": [
+      1,
+      2,
+      3,
+      19,
+      20,
+      21,
+      100
+    ],
+    "tyk2_lig3_seed48": [
+      0,
+      1,
+      8,
+      9,
+      10,
+      18,
+      19,
+      21,
+      22,
+      100
+    ],
+    "tyk2_lig3_seed49": [
+      100
+    ],
+    "tyk2_lig3_seed50": [
+      100
+    ],
+    "tyk2_lig3_seed51": [
+      100
+    ]
+  },
+  "skipped": [
+    {
+      "run": "tyk2_lig3_seed48",
+      "event": "fixed_chemistry_problem:AtomValenceException:0",
+      "call": 0,
+      "reason": "No previous call; no temporal contrast is possible."
+    }
+  ],
+  "scope": "Exploratory local bond-readout attribution; no full-rollout intervention and no root-cause label."
+}

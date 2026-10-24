@@ -1,0 +1,63 @@
+{
+  "archive_sha256": "156c2dc1a75bd62e634f2ce44ac85d89c818bbc9b109fd061900d94a20836952",
+  "completed_discovery_trials": 198,
+  "uploaded_result_files_hash_verified": 1394,
+  "tensor_files_omitted_from_review": 198,
+  "feature_patch_arrays_and_norms_checked": 192,
+  "raw_sdf_graph_crosschecks": [
+    {
+      "trial": "baseline_s50",
+      "C2_N3_bond_order": 1,
+      "C2_external_bonds": [
+        [
+          18,
+          2
+        ],
+        [
+          22,
+          1
+        ]
+      ],
+      "C2_bond_order_sum": 4.0
+    },
+    {
+      "trial": "c000_L09_nodes_d42_targeted",
+      "C2_N3_bond_order": 3,
+      "C2_external_bonds": [
+        [
+          18,
+          1
+        ]
+      ],
+      "C2_bond_order_sum": 4.0
+    },
+    {
+      "trial": "c000_L09_nodes_d43_targeted",
+      "C2_N3_bond_order": 3,
+      "C2_external_bonds": [
+        [
+          18,
+          1
+        ]
+      ],
+      "C2_bond_order_sum": 4.0
+    }
+  ],
+  "followup_trials": 33,
+  "followup_counts": {
+    "baseline": 7,
+    "sham": 2,
+    "targeted": 12,
+    "random_direction": 12
+  },
+  "reference_seeds_disjoint_from_discovery_donors": true,
+  "all_reference_seeds_present_in_existing_head_metadata": true,
+  "full_gpu_followup_executed": false,
+  "launcher_new_run_handoff_passed": true,
+  "launcher_resume_handoff_passed": true,
+  "launcher_test_model_main": "mocked; actual model GPU not executed",
+  "existing_output_overwrite_rejected": true,
+  "original_identity_preserved_on_resume": true,
+  "uploaded_scientific_source_hashes_match_identity": true,
+  "uploaded_json_fix_sha256": "a706d1a21a52093a29bb9e3a4715a1081c3a152108a62f3f2c649a2159f9b28c"
+}

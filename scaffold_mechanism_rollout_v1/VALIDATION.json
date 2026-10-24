@@ -1,0 +1,38 @@
+{
+  "version": "2026-10-24.local-head-rollout.1",
+  "test_script": "check_rollouts.py",
+  "tests_passed": 11,
+  "exit_code": 0,
+  "test_log": "test_fixed_identity_separate_from_external_valence (__main__.Checks.test_fixed_identity_separate_from_external_valence) ... ok\ntest_geometry_random_control_symmetry_norm_and_local_rng (__main__.Checks.test_geometry_random_control_symmetry_norm_and_local_rng) ... ok\ntest_native_full_sham_replay_is_identical (__main__.Checks.test_native_full_sham_replay_is_identical) ... ok\ntest_original_weight_head_matches_all_targeted_groups (__main__.Checks.test_original_weight_head_matches_all_targeted_groups) ... ok\ntest_random_control_native_rollout_keeps_rng_and_norm (__main__.Checks.test_random_control_native_rollout_keeps_rng_and_norm) ... ok\ntest_real_review_selects_bounded_batch (__main__.Checks.test_real_review_selects_bounded_batch) ... ok\ntest_rollout_reproduces_local_coalition_logits (__main__.Checks.test_rollout_reproduces_local_coalition_logits) ... ok\ntest_targeted_native_rollout_is_free_after_write (__main__.Checks.test_targeted_native_rollout_is_free_after_write) ... ok\ntest_unknown_chemistry_not_normal (__main__.Checks.test_unknown_chemistry_not_normal) ... ok\ntest_wrong_same_seed_source_is_rejected (__main__.Checks.test_wrong_same_seed_source_is_rejected) ... ok\ntest_zero_change_is_uninformative (__main__.Checks.test_zero_change_is_uninformative) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.243s\n\nOK\n",
+  "runtime": {
+    "python": "3.12.14",
+    "torch": "2.11.0+cpu",
+    "rdkit": "2026.03.6",
+    "numpy": "2.5.4",
+    "cuda_available": false
+  },
+  "reused_native_functions_unchanged": {
+    "run_rollout": true,
+    "evaluate_final": true,
+    "compare_tree": true,
+    "rng_matches": true
+  },
+  "reused_quality_functions_unchanged": true,
+  "real_review": {
+    "captured_states": 114,
+    "contrasts": 55,
+    "local_combinations": 880,
+    "decompositions_recomputed": 55,
+    "maximum_csv_recompute_error": 0.0
+  },
+  "planned_native_rollouts": 150,
+  "planned_inputs": 1,
+  "planned_seeds": 10,
+  "head_fixture_sha256": "bdbf678da56fff7957147565b9da514959421f865f2971941905bb4b0815bc8b",
+  "limitations": [
+    "Full ROOT GPU experiment NOT executed locally: no original full checkpoint or .pt trajectories are available here.",
+    "Recurrent sampler tests use a constructed four-call PyTorch model with the actual replay adapter and native chemistry source functions.",
+    "Original head weights are tested with constructed activations; this is software validation, not new empirical rescue evidence.",
+    "The current scientific result is local head-effect evidence from the uploaded completed review. Final-trajectory causality and cross-input generalization remain untested."
+  ]
+}

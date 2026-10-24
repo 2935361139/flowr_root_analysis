@@ -1,0 +1,88 @@
+{
+  "source_checks": {
+    "flowr/gen/generate_from_pdb.py": {
+      "expected": "c562ea9183fb31dbe0424ed6688f7a258af38927cd2227ae8a43cfb07358dad8",
+      "actual": "c562ea9183fb31dbe0424ed6688f7a258af38927cd2227ae8a43cfb07358dad8",
+      "match": true
+    },
+    "flowr/gen/generate.py": {
+      "expected": "cb397a0d903e447cec873826300b562b9e7e2666daaad1e5f1cd42178e4e61f9",
+      "actual": "cb397a0d903e447cec873826300b562b9e7e2666daaad1e5f1cd42178e4e61f9",
+      "match": true
+    },
+    "flowr/models/fm_pocket.py": {
+      "expected": "beaace3ab92a8377bc8eab95333c8f40ce370ca9224f7a78927c5a424bb38426",
+      "actual": "beaace3ab92a8377bc8eab95333c8f40ce370ca9224f7a78927c5a424bb38426",
+      "match": true
+    },
+    "flowr/models/mol_builder.py": {
+      "expected": "30df0c63e75d4350b9d38d97a13f67ba14cf8a45b847faf257a34ddfb3d035a3",
+      "actual": "30df0c63e75d4350b9d38d97a13f67ba14cf8a45b847faf257a34ddfb3d035a3",
+      "match": true
+    },
+    "flowr/data/interpolate.py": {
+      "expected": "171af7162fe2b7fc37e8ffdcbf90f6ea5c99bebed0b17a3d825ef24dee7cdd96",
+      "actual": "171af7162fe2b7fc37e8ffdcbf90f6ea5c99bebed0b17a3d825ef24dee7cdd96",
+      "match": true
+    },
+    "flowr/scriptutil.py": {
+      "expected": "94422ce28c701966cd54f1d46b4bbb22438204a38789a3e897301f4fb71da6ff",
+      "actual": "94422ce28c701966cd54f1d46b4bbb22438204a38789a3e897301f4fb71da6ff",
+      "match": true
+    },
+    "flowr/models/pocket.py": {
+      "expected": "ccc5199b91c46dba0c24b0a98f68085a7b7a9998970485a770d9823ae197a966",
+      "actual": "ccc5199b91c46dba0c24b0a98f68085a7b7a9998970485a770d9823ae197a966",
+      "match": true
+    },
+    "flowr/models/pocket_util.py": {
+      "expected": "8bdc8f3635ece1b8e16eb4e8846e464cb5e6f8dbdd2faa51e75f9adb86830cfd",
+      "actual": "8bdc8f3635ece1b8e16eb4e8846e464cb5e6f8dbdd2faa51e75f9adb86830cfd",
+      "match": true
+    },
+    "flowr/models/semla.py": {
+      "expected": "e7c409d398a0cbc0332e88314d06b293a042ae36e97face937d5c17c2b4d8433",
+      "actual": "e7c409d398a0cbc0332e88314d06b293a042ae36e97face937d5c17c2b4d8433",
+      "match": true
+    },
+    "flowr/util/rdkit.py": {
+      "expected": "00626d65e097dd1ac6b8f558219320869fef52611f964880a381f35903fda0d5",
+      "actual": "00626d65e097dd1ac6b8f558219320869fef52611f964880a381f35903fda0d5",
+      "match": true
+    },
+    "flowr/util/metrics.py": {
+      "expected": "e2ec7666d7c63ccbe164f67063f5d13701bcd11c146f423c86c86b6d723768e3",
+      "actual": "e2ec7666d7c63ccbe164f67063f5d13701bcd11c146f423c86c86b6d723768e3",
+      "match": true
+    },
+    "flowr/gen/utils.py": {
+      "expected": "2185b671e62bea6012dd38f4dfb8e6ba877285769b8609cc252c28760be440e0",
+      "actual": "2185b671e62bea6012dd38f4dfb8e6ba877285769b8609cc252c28760be440e0",
+      "match": true
+    },
+    "flowr/models/integrator.py": {
+      "expected": "e9abd83167f708da4712db2ac49ab24ac44a39c59c46a54c20789c7873c58000",
+      "actual": "e9abd83167f708da4712db2ac49ab24ac44a39c59c46a54c20789c7873c58000",
+      "match": true
+    }
+  },
+  "additional_uploaded_source_hashes": {
+    "flowr/util/valence_repair.py": "7f9f07d2d129600d26b5f7b1078def9f193e9c667df5201b2f3e2661892da0ff",
+    "flowr/util/valence_report.py": "edd7be178ab0f00e53567c994c9350ead3773e8a30cfe2c1613b017351d91414"
+  },
+  "checkpoint_sha256": "b818f41dc12ffb6bc558bb0ad997055581e07cd9e49dcac1b794ed9993c46e4c",
+  "notes": [
+    "The 13 recorded source hashes all match the uploaded source archive.",
+    "The two extra repair sources were not included in the original 13-source record; these hashes identify uploaded code, not historical proof of those two files."
+  ],
+  "repair_call_chain": [
+    "FlowMatching._generate_mols",
+    "MolBuilder.mols_from_tensors",
+    "MolBuilder._mol_from_tensors",
+    "MolBuilder._repair_valence_decode",
+    "repair_valence"
+  ],
+  "established_recorded_effect": "ptp1b ligand 1 seed 42: neutral fixed O slot 3 has three single bonds before repair; run-decode changes O to C.",
+  "source_constraint_gap": "The repair call passes probabilities and search bounds, but not fixed atom/edge masks; bond deletion is disabled in the recorded run.",
+  "not_established": "Which upstream learned calculation causes incompatible boundary bond scores."
+}

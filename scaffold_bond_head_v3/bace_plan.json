@@ -1,0 +1,108 @@
+{
+  "case": "bace",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "calls": [
+    29,
+    30,
+    31,
+    32,
+    33
+  ],
+  "site": 2,
+  "target_bond_class": 3,
+  "reference_bond_class": 1,
+  "partner_scope": "explicit",
+  "selected_partners": {
+    "42": [
+      3
+    ],
+    "43": [
+      3
+    ],
+    "44": [
+      3
+    ],
+    "45": [
+      3
+    ],
+    "46": [
+      3
+    ],
+    "47": [
+      3
+    ],
+    "48": [
+      3
+    ],
+    "49": [
+      3
+    ],
+    "50": [
+      3
+    ],
+    "51": [
+      3
+    ]
+  },
+  "focus_partners": {
+    "42": [
+      3
+    ],
+    "43": [
+      3
+    ],
+    "44": [
+      3
+    ],
+    "45": [
+      3
+    ],
+    "46": [
+      3
+    ],
+    "47": [
+      3
+    ],
+    "48": [
+      3
+    ],
+    "49": [
+      3
+    ],
+    "50": [
+      3
+    ],
+    "51": [
+      3
+    ]
+  },
+  "hidden_dir": "outputs/sh_hidden_bace_lig16_v1",
+  "fixed_pair_control_comparison": {
+    "recipient_seed": 50,
+    "control_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      51
+    ]
+  },
+  "research_question": "Which internal head inputs account for the observed triple-versus-single score change at the fixed cyano bond on the scaffold attachment carbon?",
+  "role_note": "Seed50 is a true fixed-fragment mismatch. The nine comparison trajectories preserve the fixed fragment but are not globally PoseBusters-passing samples.",
+  "scope_note": "50 read-only native replays; 40 consecutive-call pair changes and 45 fixed-pair control comparisons. This is descriptive readout decomposition, not SHAP, training, causal proof, or independent generalization validation."
+}
