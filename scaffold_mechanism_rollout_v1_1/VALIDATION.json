@@ -1,0 +1,72 @@
+{
+  "version": "2026-10-25.local-head-rollout.1.1",
+  "test_script": "check_rollouts.py",
+  "tests_passed": 18,
+  "exit_code": 0,
+  "runtime": {
+    "python": "3.12.14",
+    "torch": "2.11.0+cpu",
+    "rdkit": "2026.03.6",
+    "numpy": "2.5.4",
+    "cuda_available": false,
+    "tensordict": "0.15.3"
+  },
+  "reused_native_functions_unchanged": {
+    "run_rollout": true,
+    "evaluate_final": true,
+    "compare_tree": false,
+    "rng_matches": true
+  },
+  "reused_quality_functions_unchanged": true,
+  "real_review": {
+    "captured_states": 114,
+    "contrasts": 55,
+    "local_combinations": 880,
+    "decompositions_recomputed": 55,
+    "maximum_csv_recompute_error": 0.0
+  },
+  "planned_native_rollouts": 150,
+  "planned_inputs": 1,
+  "planned_seeds": 10,
+  "head_fixture_sha256": "bdbf678da56fff7957147565b9da514959421f865f2971941905bb4b0815bc8b",
+  "limitations": [
+    "Full ROOT GPU experiment NOT executed locally: no original full checkpoint or .pt trajectories are available here.",
+    "Recurrent sampler tests use a constructed four-call PyTorch model with the actual replay adapter and native chemistry source functions.",
+    "Original head weights are tested with constructed activations; this is software validation, not new empirical rescue evidence.",
+    "The current scientific result is local head-effect evidence from the uploaded completed review. Final-trajectory causality and cross-input generalization remain untested.",
+    "TensorDict version on the user machine was not recorded by V1. Local 0.15.3 reproduces the same invalid iteration class of bug with a different error message."
+  ],
+  "tests_completed": [
+    "test_native_full_sham_replay_is_identical",
+    "test_targeted_native_rollout_is_free_after_write",
+    "test_random_control_native_rollout_keeps_rng_and_norm",
+    "test_wrong_same_seed_source_is_rejected",
+    "test_rollout_reproduces_local_coalition_logits",
+    "test_geometry_random_control_symmetry_norm_and_local_rng",
+    "test_zero_change_is_uninformative",
+    "test_original_weight_head_matches_all_targeted_groups",
+    "test_unknown_chemistry_not_normal",
+    "test_fixed_identity_separate_from_external_valence",
+    "test_real_review_selects_bounded_batch",
+    "test_tensordict_plain_dict_roundtrip",
+    "test_tensordict_changed_leaf_is_rejected",
+    "test_tensordict_missing_key_and_wrong_container_rejected",
+    "test_tensordict_missing_input_label_policy_unchanged",
+    "test_native_full_sham_with_tensordict_auxiliary_outputs",
+    "test_targeted_and_random_rollout_with_tensordict_auxiliary_outputs",
+    "test_nonbond_mutation_at_patch_call_still_rejected"
+  ],
+  "test_result": "Ran 18 tests in 0.320s; OK",
+  "fix": "Explicit mapping keys in compare_tree; no numerical checks or auxiliary outputs bypassed",
+  "protocol_source_identical_to_v1": true,
+  "intervention_source_identical_to_v1": true,
+  "uploaded_failure": {
+    "zip_sha256": "af06e0be5e656354a520a80e72a45ba2c53c31796aa2d1b900bdb3e2fc05427b",
+    "completed_trials": 0,
+    "planned_trials": 150,
+    "active_trial": "seed_42_sham",
+    "last_recorded_call": 52,
+    "error": "RuntimeError: generator raised StopIteration",
+    "location": "native_adapter.compare_tree: set(a) while comparing TensorDict auxiliary output"
+  }
+}
