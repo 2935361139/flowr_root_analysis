@@ -1,0 +1,70 @@
+{
+  "version": "2026-10-27.discovery-cohort.2",
+  "case_order": [
+    "cdk2",
+    "tyk2",
+    "ptp1b",
+    "bace"
+  ],
+  "n_inputs": 10,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "explicit_excluded_inputs": [
+    [
+      "bace",
+      16
+    ],
+    [
+      "ptp1b",
+      0
+    ],
+    [
+      "cdk2",
+      1
+    ],
+    [
+      "tyk2",
+      3
+    ],
+    [
+      "ptp1b",
+      1
+    ]
+  ],
+  "existing_records_root": "outputs",
+  "checkpoint": "checkpoints/flowr_root_v2.2.ckpt",
+  "checkpoint_sha256": "b818f41dc12ffb6bc558bb0ad997055581e07cd9e49dcac1b794ed9993c46e4c",
+  "source_sha256": {
+    "flowr/gen/generate_from_pdb.py": "c562ea9183fb31dbe0424ed6688f7a258af38927cd2227ae8a43cfb07358dad8",
+    "flowr/gen/generate.py": "cb397a0d903e447cec873826300b562b9e7e2666daaad1e5f1cd42178e4e61f9",
+    "flowr/models/fm_pocket.py": "beaace3ab92a8377bc8eab95333c8f40ce370ca9224f7a78927c5a424bb38426",
+    "flowr/models/mol_builder.py": "30df0c63e75d4350b9d38d97a13f67ba14cf8a45b847faf257a34ddfb3d035a3",
+    "flowr/data/interpolate.py": "171af7162fe2b7fc37e8ffdcbf90f6ea5c99bebed0b17a3d825ef24dee7cdd96",
+    "flowr/scriptutil.py": "94422ce28c701966cd54f1d46b4bbb22438204a38789a3e897301f4fb71da6ff",
+    "flowr/models/pocket.py": "ccc5199b91c46dba0c24b0a98f68085a7b7a9998970485a770d9823ae197a966",
+    "flowr/models/pocket_util.py": "8bdc8f3635ece1b8e16eb4e8846e464cb5e6f8dbdd2faa51e75f9adb86830cfd",
+    "flowr/models/semla.py": "e7c409d398a0cbc0332e88314d06b293a042ae36e97face937d5c17c2b4d8433",
+    "flowr/util/rdkit.py": "00626d65e097dd1ac6b8f558219320869fef52611f964880a381f35903fda0d5",
+    "flowr/util/metrics.py": "e2ec7666d7c63ccbe164f67063f5d13701bcd11c146f423c86c86b6d723768e3",
+    "flowr/gen/utils.py": "2185b671e62bea6012dd38f4dfb8e6ba877285769b8609cc252c28760be440e0",
+    "flowr/models/integrator.py": "e9abd83167f708da4712db2ac49ab24ac44a39c59c46a54c20789c7873c58000"
+  },
+  "helper_sha256": {
+    "helpers/inspect_scaffold_trace.py": "a9ace945f9773545d2129172efdbd2320b0806c09a79a3d0f8dab98f1bed46b3",
+    "helpers/quality.py": "97eda26eca03e1f8dcb3d59b8b33430cbb855e87508eeee20f17905a3fe66f75",
+    "helpers/record_scaffold_run.py": "36876d11827cb59dc31f1034ef89c6d22eb4d7db4037660b16a4f5cb04af3dde"
+  },
+  "eligibility": "Connected finite 3D input, nonempty native retained fragments and replaceable scaffold, and at least one fixed-to-scaffold attachment. No specific fixed-internal bond or failure type is required. Selection uses inputs only.",
+  "endpoint_policy": "Report native validity/connectivity/fixed-substructure endpoint separately from mapped fixed chemistry, PoseBusters, scaffold novelty and strict-boundary diagnostics. No reference-identical new scaffold requirement.",
+  "study_scope": "Discovery pilot: 10 locally unused unique ligand graphs x 10 seeds, drawn from four existing example pockets. This is not a new-protein or pretraining-data holdout. Record successful and unsuccessful outcomes. No training, no causal interventions."
+}
