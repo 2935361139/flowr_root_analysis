@@ -1,0 +1,61 @@
+只检查原检查点和本地记录，不运行生成实验。
+
+一、放在哪里
+把 inspect_flowr_checkpoint.py 放到：
+/home/ljl/projects/flowr_root/inspect_flowr_checkpoint.py
+
+仅需这一个文件，不依赖之前云端的 scaffold_study_v1。
+它是新增工具，不替换原模型、训练代码或评价器。
+如已有同名文件，先保留旧文件并换名，不直接覆盖自己的修改。
+
+如果浏览器把文件下载到了Windows：
+在你已打开的VS Code WSL窗口中，将下载的.py文件拖入左侧最顶层flowr_root目录。
+确认它与record_scaffold_run.py、pyproject.toml处在同一层。
+也可以在Windows文件管理器地址栏打开：
+\\wsl.localhost\Ubuntu\home\ljl\projects\flowr_root
+若WSL发行版名称不是Ubuntu，使用实际名称，或采用VS Code拖入方式。
+
+二、运行
+在你截图中的WSL终端逐行执行：
+
+cd /home/ljl/projects/flowr_root
+.venv/bin/python inspect_flowr_checkpoint.py
+
+无需安装依赖、无需登录VS Code的Codex。使用现有PyTorch即可。
+工具会读取约1GB权重计算SHA256，可能需要等待一会儿。
+读取元数据使用meta设备和受限加载，不加载生成模型，不把权重放进GPU。
+权重SHA256不匹配则不反序列化该权重。
+遇到不支持的检查点对象时保留错误，不自动改成不受限加载。
+
+三、成功后看到什么
+终端最后会显示类似：
+
+检查完成：completed
+请上传这个文件：/home/ljl/projects/flowr_root/outputs/checkpoint_audit_日期_时间_随机后缀/checkpoint_audit_result.zip
+生成/重放/干预次数：0/0/0。
+
+如果显示completed_with_issues，也请上传同一个ZIP。
+它表示检查发现了缺项、不匹配或读取问题，不代表生成实验失败。
+命令返回码2用于表示需要审阅的问题；不要自行修改配置绕过。
+completed仅表示检查工具结束，不表示模型监督、重放或机制已经验证。
+
+四、上传哪个文件
+上传终端“请上传这个文件”后面指向的checkpoint_audit_result.zip。
+它通常很小，含配置表、报告、日志、相关源码快照和文件清单。
+不含模型权重、原始轨迹张量或分子数据，不要上传1GB的.ckpt。
+可在VS Code左侧outputs中找到新生成目录，也可把终端显示的目录通过WSL文件管理器打开。
+
+五、报错怎么办
+如果有ZIP：上传ZIP，并附终端报错。
+如果连ZIP都没有：复制从运行命令到最后一行的全部终端输出；保留已产生的结果目录。
+不要删除原数据、重装PyTorch、改阈值或修改权重。
+重复执行会创建新目录，不覆盖上次结果。
+
+六、边界
+只保存检查点实际记录的字段。False、0、null与“未记录”分别保留。
+缺失字段不会用当前源码默认值填充；同名字段在不同位置冲突时全部列出。
+源码快照是当前本地版本，不自动等同于原训练版本。
+检查记录存在性并区分Git LFS指针；只检查部分保存状态的元数据，不声称完成重放。
+不下载数据、不调用网络服务、不修改Git索引、不提交或推送GitHub。
+唯一写入位置是新建的outputs/checkpoint_audit_*目录。
+完整重放与干预预算仍为0/24，本次检查不消耗生成实验预算。

@@ -1,0 +1,22 @@
+{
+  "tool_version": "1.0.0",
+  "tool_sha256": "6df17dd3c2ca68236cba5ef5676300c6b04395a8b81d4b1e24fb03159e26b03d",
+  "developer_tests": {
+    "passed": 10,
+    "failed": 0,
+    "command": "python -B -m unittest -v test_checkpoint_audit.py"
+  },
+  "native_saved_record_metadata_checks": {
+    "passed": 7,
+    "case": "ptp1b_lig3_seed_47"
+  },
+  "cloud_missing_checkpoint_integration_test": "produced completed_with_issues and readable 204 KB result ZIP",
+  "original_model_checkpoint_inspected": false,
+  "original_checkpoint_note": "The original checkpoint is on the user WSL machine; all positive checkpoint-load tests used synthetic checkpoints.",
+  "generations": 0,
+  "replays": 0,
+  "interventions": 0,
+  "original_tracked_source_changes": false,
+  "dependencies": "Python standard library and existing PyTorch only",
+  "safety": "weights_only=True; meta tensors; no unrestricted pickle fallback; no checkpoint tensors in output archive"
+}

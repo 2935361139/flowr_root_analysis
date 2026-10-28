@@ -1,0 +1,75 @@
+{
+  "software_tests": {
+    "passed": 39,
+    "failed": 0,
+    "skipped": 0,
+    "command": "python -m unittest discover -s scaffold_study_v1/tests -v"
+  },
+  "real_report_imports": [
+    {
+      "runs": 100,
+      "input_groups": 10,
+      "geometry_pairs_included": true,
+      "raw_geometry_failed": 42,
+      "raw_fixed_chemistry_changed": 3,
+      "raw_scaffold_unchanged": 31
+    },
+    {
+      "runs": 30,
+      "input_groups": 3,
+      "geometry_pairs_included": false,
+      "historical_carbon_network_suffix": 38,
+      "historical_carbon_sampler_suffix": 85,
+      "sampler_boundary_was_unknown": true
+    }
+  ],
+  "original_source_files_modified": false,
+  "new_gpu_generations": 0,
+  "second_real_model_validated": false,
+  "scope": "Existing report normalization plus 100 saved-prediction terminal-processing pairs. No new generation, neural forward replay, hidden-module attribution, or validation on a second model.",
+  "previous_report_only_validation": {
+    "package_extraction_and_normalized_cli": "passed; identical diagnosis JSON",
+    "causal_interventions": 0
+  },
+  "terminal_control": {
+    "passed": true,
+    "runs": 100,
+    "input_groups": 10,
+    "baseline_tensor_max_abs_error": {
+      "coords": 0.0,
+      "atomics": 0.0,
+      "bonds": 0.0,
+      "charges": 0.0,
+      "mask": 0.0
+    },
+    "baseline_decodes_reproduced": 200,
+    "paired_csv_rows": 200,
+    "both_decoders_have_identical_quality_labels": true,
+    "aggregate_recomputed_independently": true,
+    "per_run_json_matches_aggregate_records": true,
+    "csv_boolean_labels_and_failures_match": true,
+    "source_hashes_match_execution_protocol": true,
+    "all_100_baselines_preceded_any_on_arm": true,
+    "native_energy_computation_failures": {
+      "run_id": "tyk2_lig2_seed_48",
+      "branches": [
+        "off",
+        "on"
+      ],
+      "decodes": [
+        "raw_without_repair",
+        "run_decode"
+      ],
+      "log_warning_count": 4
+    },
+    "software_tests": {
+      "passed": 39,
+      "failed": 0,
+      "skipped": 0
+    },
+    "new_generations": 0,
+    "neural_interventions": 0,
+    "terminal_processing_pairs": 100,
+    "neural_root_cause": "not_established"
+  }
+}

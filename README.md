@@ -1,5 +1,7 @@
 # Flowr.root -- A flow matching based foundation model for joint multi-purpose structure-aware 3D ligand generation and affinity prediction
 
+> 云端新增研究工具与本地运行说明：[CLOUD_HANDOFF_CN.md](CLOUD_HANDOFF_CN.md)。当前只运行原检查点的只读检查，不重复生成或批量评价。
+
 [![arXiv](https://img.shields.io/badge/arXiv-2504.10564-b31b1b.svg)](https://arxiv.org/abs/2510.02578)
 
 ![FLOWR.root Overview](flowr_root.png)

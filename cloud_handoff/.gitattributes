@@ -1,0 +1,2 @@
+# These small handoff packages must be downloadable as real ZIPs, not LFS pointers.
+*.zip -filter -diff -merge -text
