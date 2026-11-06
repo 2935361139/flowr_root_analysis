@@ -1,0 +1,43 @@
+{
+  "unit_tests_passed": 37,
+  "unit_tests_failed": 0,
+  "software_checks": [
+    "24 optimizer/routing/selection/classification checks",
+    "13 coordinate/baseline checks",
+    "all 7 original geometry functions source-identical",
+    "all 8 current failures route to intervention bank",
+    "previous 3 successful selections retained",
+    "both old analysis files backed up before replacement",
+    "preflight failure packaged without exporting molecules",
+    "existing output directory protected"
+  ],
+  "original_native_pb_baselines_reproduced": 10,
+  "new_C_native_pb_passes": 10,
+  "new_C_native_pb_evaluated": 10,
+  "C_original_failures_rescued_under_native_pb": 8,
+  "C_UFF_only_original_failures_rescued_under_native_pb": 0,
+  "native_precheck_versions": {
+    "rdkit": "2026.03.6",
+    "scipy": "1.17.0",
+    "numpy": "2.3.5"
+  },
+  "original_posebusters_sources_match_recorded_hashes": true,
+  "full_torch_decoder_flowr_pipeline_tested": false,
+  "limitations": [
+    "C relaxes fixed-coordinate conditioning, preserving fixed chemical identity only.",
+    "BACE maximum fixed-atom movements are approximately 1.01 to 1.41 angstrom per sample.",
+    "Structure-level native PB prechecks do not replace the user full pipeline or controls.",
+    "Current empirical validation is geometry rescue, not neural causality or cross-model generalization.",
+    "No guarantee of rescue for every possible chemical or geometric failure."
+  ],
+  "artifact_hashes": {
+    "NATIVE_PRECHECK.json": "11b7f00d8e9b6a68a2ea4a95c2e1dbbcce0ae2a7896f7c8ea4f484defc0b0688",
+    "README_CN.md": "fa4206cb48d31a9110f4ffb1647102aadba5f09e82ad0321bf29f16d03a4fb6e",
+    "install_update.py": "87b113a72e3fdd7d160cfc38f545fc27501a951ecfd32b56347b206e8eb18598",
+    "package_manifest.json": "24f397b76e83b9d55a2748b7e88b2c81df514b67b6a87a445eac10cccc737909",
+    "scaffold_study_v1/geometry_intervention.py": "4ba7443ab3c96cf5cf9156884ed2a0fd7e97ed350ecc68a4e165182734768d6f",
+    "scaffold_study_v1/terminal_control.py": "4dbc85912d22a3fd6650092b5b65d8034a1901432d62991d354469ad1552432e",
+    "test_coordinate_control.py": "c67634fdab43af9803d68566fe1f3bd79a4d0f6624cf5f3556a995f949f76dce",
+    "test_geometry_intervention.py": "76e3fe1dff63da7f0fb18b9099a5c0f03d793046f9d8ac5727b5352645a19b80"
+  }
+}
