@@ -1,0 +1,25 @@
+test_aggregate_separates_relaxed_constraint_and_unsupported (test_runner.RunnerTests.test_aggregate_separates_relaxed_constraint_and_unsupported) ... ok
+test_analysis_error_is_not_success (test_runner.RunnerTests.test_analysis_error_is_not_success) ... ok
+test_attempted_and_completed_jobs_are_separate (test_runner.RunnerTests.test_attempted_and_completed_jobs_are_separate) ... ok
+test_changed_completed_output_is_rejected (test_runner.RunnerTests.test_changed_completed_output_is_rejected) ... ok
+test_commands_use_each_new_group (test_runner.RunnerTests.test_commands_use_each_new_group) ... ok
+test_compatibility_installer_backups_and_is_idempotent (test_runner.RunnerTests.test_compatibility_installer_backups_and_is_idempotent) ... ok
+test_completed_stage_is_not_reexecuted (test_runner.RunnerTests.test_completed_stage_is_not_reexecuted) ... ok
+test_duplicate_graph_blocked (test_runner.RunnerTests.test_duplicate_graph_blocked) ... ok
+test_duplicate_identity_blocked (test_runner.RunnerTests.test_duplicate_identity_blocked) ... ok
+test_exact_budget_and_input_grouping (test_runner.RunnerTests.test_exact_budget_and_input_grouping) ... ok
+test_failed_stage_is_not_retried (test_runner.RunnerTests.test_failed_stage_is_not_retried) ... ok
+test_failure_denominator_cannot_drop_unsupported (test_runner.RunnerTests.test_failure_denominator_cannot_drop_unsupported) ... ok
+test_full_synthetic_pipeline_100_jobs_and_25_analysis_stages (test_runner.RunnerTests.test_full_synthetic_pipeline_100_jobs_and_25_analysis_stages) ... ok
+test_invalid_decode_keeps_raw_fixed_label_for_baseline_comparison (test_runner.RunnerTests.test_invalid_decode_keeps_raw_fixed_label_for_baseline_comparison) ... ok
+test_no_old_inputs_or_graphs_selected (test_runner.RunnerTests.test_no_old_inputs_or_graphs_selected) ... ok
+test_partial_batches_not_reported_as_100 (test_runner.RunnerTests.test_partial_batches_not_reported_as_100) ... ok
+test_report_pack_excludes_tensor_weights_and_nested_zip (test_runner.RunnerTests.test_report_pack_excludes_tensor_weights_and_nested_zip) ... ok
+test_selector_deduplicates_candidates (test_runner.RunnerTests.test_selector_deduplicates_candidates) ... ok
+test_source_drift_rejected (test_runner.RunnerTests.test_source_drift_rejected) ... ok
+test_untracked_directory_is_never_overwritten (test_runner.RunnerTests.test_untracked_directory_is_never_overwritten) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 8.349s
+
+OK

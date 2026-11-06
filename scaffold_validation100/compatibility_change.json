@@ -1,0 +1,6 @@
+{
+  "target": "scaffold_study_v1/terminal_control.py",
+  "before_sha256": "4dbc85912d22a3fd6650092b5b65d8034a1901432d62991d354469ad1552432e",
+  "after_sha256": "b092486e2eea361a9c7248931c8b7f8e6298474453ef65b8456c0f30397030d9",
+  "change": "Initialize fixed_chemistry_preserved from the already computed raw graph, matching the unchanged evaluator on invalid decodes. No endpoint, routing, intervention or optimization change."
+}
