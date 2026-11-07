@@ -1,7 +1,0 @@
-{
-  "install_update.py": "87b113a72e3fdd7d160cfc38f545fc27501a951ecfd32b56347b206e8eb18598",
-  "scaffold_study_v1/geometry_intervention.py": "4ba7443ab3c96cf5cf9156884ed2a0fd7e97ed350ecc68a4e165182734768d6f",
-  "scaffold_study_v1/terminal_control.py": "4dbc85912d22a3fd6650092b5b65d8034a1901432d62991d354469ad1552432e",
-  "test_coordinate_control.py": "c67634fdab43af9803d68566fe1f3bd79a4d0f6624cf5f3556a995f949f76dce",
-  "test_geometry_intervention.py": "76e3fe1dff63da7f0fb18b9099a5c0f03d793046f9d8ac5727b5352645a19b80"
-}
