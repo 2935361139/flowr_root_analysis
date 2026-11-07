@@ -1,6 +1,0 @@
-{
-  "software_tests": 18,
-  "real_20_record_regression": "identical diagnosis.json",
-  "native_posebusters_temporal_run": false,
-  "model_inference_performed": false
-}
