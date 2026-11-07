@@ -1,128 +1,131 @@
-# 新输入验证：100 次生成，5 组处理
+# 按路径输入、分类与干预
 
-## 本轮要回答什么
+这次修改的是输入输出与任务选择。沿用原来的生成参数、判别标准、定位方法和 A/B/AB/C 干预及对照。没有增加新的修复算法，原来不支持的化学结构错误、UFF 参数缺失等仍会如实报告。
 
-冻结已经用过的评价、定位和 A/B/AB/C 干预方法，换一批配体输入，从头生成并统计：
+## 安装一次
 
-- 原来通过多少、失败多少；失败检查项是什么。
-- 哪些失败能定位到位置和观察到的时间区间，哪些仍未定位。
-- 原方法修复多少；其中多少需要 C 放松固定片段坐标条件。
-- 还剩多少未修复、多少现有方法未覆盖；对照是否也能通过。
-
-这里的“修复”始终要求完整原评价通过，不能只看原先碰撞消失。
-这是对新输入的结构诊断与末端几何修复验证；不是网络层原因准确率，也不是跨模型验证。
-
-## 有什么代码变化
-
-新增一个批量运行文件夹，并修正原 `terminal_control.py` 的一处标签初始化。安装器先备份，只接受已核对的 v2 文件，不覆盖未知版本。
-
-- `run.py`：批量调度、版本核对、输出汇总、打包。
-- `install_compat.py`、`terminal_control.py`：安装一处兼容修正；化学无效时也保留原始张量已判出的固定化学标签，让基线复核与原评价一致，随后按原规则记为未覆盖。
-- `existing_input_selection.py`：既有 `scaffold_cohort_v2/run_batch.py` 的副本；只复用输入筛选函数，不运行它的旧实验入口。
-- `frozen_method.json`：上一批实际执行过的方法版本、参数和本轮计划。
-- `test_runner.py`：批量入口的 CPU 软件测试；不会运行模型。
-
-调用的原有程序依次为：
-
-| 环节 | 已有入口 | 做什么 |
-|---|---|---|
-| 生成与记录 | `record_scaffold_run.py` | 每次生成 1 个，保留原始终态和完整轨迹 |
-| 判定 | `scaffold_evaluation_v2/evaluate_scaffold_outputs.py` | 原始与原解码结果分别评价，不预先筛掉失败 |
-| 化学轨迹 | `scaffold_diagnostics_v1/diagnose_scaffold_runs.py` | 检查已有化学与连接轨迹证据 |
-| 几何定位 | `scaffold_geometry_audit_v1/run_audit.py` | 定位可处理的终态冲突，回看已记录的轨迹 |
-| 整理候选 | `scaffold_study_v1/run.py` | 整理问题、位置和时间证据，保留未定位项 |
-| 干预与对照 | `scaffold_study_v1/terminal_control.py` | 运行既有 A/B/AB/C 和 15 个对照分支 |
-
-这不是重新设计干预算法。生成器、权重、评价标准、干预参数均冻结。
-
-## 固定的实验规模
-
-- 从现有 `examples` 的 BACE/CDK2/PTP1B/TYK2 配体文件中，按既有输入筛选规则选择 **10 个本地旧记录中未使用的不同配体图**。
-- 每个输入使用种子 **2001–2010**，共 **100 次**生成。
-- 分成 **5 组，每组 2 个输入 × 10 次 = 20 个**，符合当前干预程序的单组上限。
-- 五组只是执行分组，不是五种方法或五个独立数据集。每个配体的 10 次生成属于重复采样。
-- 只根据原始输入和旧使用记录选样，不看生成成败后挑样。
-- 最多 100 次生成尝试；干预阶段最多 100 × 19 = 1900 次干预/对照评价，不额外调用生成网络。基线复核和原始/解码双评价另计，不算新生成。
-- 本轮不调阈值、不换候选、不追加种子；未解决就如实记录并结束。
-
-旧的 `outputs` 请保留：仅用于识别用过的输入，不会把旧样本混入本轮统计。
-如果旧记录已经移走或删除，“未使用”只能限于目前可查到的本地记录和已知排除名单。
-这十个输入仍来自既有蛋白口袋，不等于新靶点、训练集外样本或新模型。
-
-## 你要怎么运行
-
-1. 将压缩包解压到 `/home/ljl/projects/flowr_root/`，确认有：
-
-   `/home/ljl/projects/flowr_root/scaffold_validation100/run.py`
-
-   不要解压成两层同名文件夹。不要用旧 GitHub 全仓库覆盖当前已经跑成功的环境。
-
-2. 在 WSL 终端复制执行以下整段：
+先等当前实验结束。把 `scaffold_path_update.zip` 解压到项目根目录，然后在原来的环境执行：
 
 ```bash
 cd /home/ljl/projects/flowr_root
 source .venv/bin/activate
-python scaffold_validation100/install_compat.py --repo . &&
-python scaffold_validation100/run.py --prepare --repo . &&
-python scaffold_validation100/run.py --run --repo .
+python scaffold_path_update/install.py --repo .
 ```
 
-第一条 Python 命令安装上述兼容修正；备份位置会打印为 `archive/validation100_compat_backup_*/`。
-第二条 Python 命令检查原程序、环境、CUDA、权重、输入和空间，并冻结本轮样本名单；不生成分子。
-`PREPARED: 10 unused inputs x 10 seeds = 100 generations; 5 groups x 20.` 表示准备完成。
-`&&` 确保准备失败后不会继续启动生成。
+会自动备份替换的文件到 `archive/validation_paths_backup_*`。安装兼容原 validation100 和上一版可调参数入口；遇到未识别的核心代码修改会在写入前停止，避免覆盖。
 
-第三条 Python 命令自动执行每组的生成 → 判定 → 定位 → 候选整理 → 干预与对照。
-不用再手工输入 100 条生成命令。屏幕持续打印正在执行的任务；完整输出另存于 `logs/`。
-保持终端运行，避免机器休眠；暂时不要修改项目代码、依赖、输入或旧结果。
+只修改**项目根目录下** `scaffold_validation100/config.py`，不要修改安装包 `payload/` 里的副本。旧的配置会随旧代码保存在备份中；首次升级使用下面的 5 个样本配置，务必检查路径。
 
-本包要求上一轮成功运行时的版本：Torch 2.11.0+cu130、RDKit 2026.03.6、NumPy 2.5.3、SciPy 1.18.1。
-如核对不符，不要为绕过检查自行重装或修改哈希；发送结果包，先明确变化。
+## 每次只改 config.py
 
-## 完成后只交回一个文件
+```python
+SDF_PATH = "examples/cdk2_ligands.sdf"
+PDB_PATH = "examples/cdk2_protein.pdb"
+LIGAND_INDICES = [5]
+SAMPLES_PER_INPUT = 5
+SEED_START = 3001
 
-```text
-/home/ljl/projects/flowr_root/outputs/sh_validation100_v1/validation100_review.zip
+GENERATION_DIR = "outputs/experiment_001/generated"
+INTERVENTION_INPUT_DIR = "outputs/experiment_001/generated/failed"
+INTERVENTION_OUTPUT_DIR = "outputs/experiment_001/intervention"
+
+INPUTS_PER_GROUP = 2
 ```
 
-包内包含总体/分组统计、各样本的评价与诊断、干预/对照结果、结构文件、日志和版本记录。
-不会打包模型权重或大型 `.pt` 轨迹。原始 `.pt` 留在本地，之后复核可能仍要用。
+- `SDF_PATH`：输入配体文件，可换成你自己的 SDF 路径。
+- `PDB_PATH`：对应蛋白。SDF 配体需要是该蛋白坐标系中的三维构象，不能拿任意二维分子或另一个口袋的坐标直接替换。此次一批使用一个 SDF/PDB 对；不同蛋白分批运行即可。
+- `LIGAND_INDICES = [5]`：取 SDF 中编号 5、也就是第 6 个配体。可写 `[0, 1, 2]`，也可写 `"all"` 选择全部。
+- 总数 = 选中的配体数 × `SAMPLES_PER_INPUT`。例如 `[5]` 和 `5` 共生成 5 个；选 10 个配体、每个生成 10 个就是 100 个。
+- `SEED_START`：起始随机种子；相同输入与种子用于复现，换一段种子用于再次采样。
+- 相对路径从项目根目录计算；支持包含空格的路径以及 Linux 绝对路径，也支持仓库外的数据和结果目录。
+- 每次新实验用新目录，例如将三个输出相关路径中的 `experiment_001` 一起改为 `experiment_002`；不会自动覆盖或把两批混在一起。
+- `INPUTS_PER_GROUP` 保持 2 即可。组大小不改变判别标准，同一输入的全部种子保持在同组。
+- 输入检查发现未满足现有 scaffold hopping 前提的配体，会在生成前列出并停止；不会偷偷换一个配体凑数。不扫描、排除旧输入，也不读取旧实验日志。
 
-- `summary.json`、`group_results.csv`：总体和每组通过/失败/修复/未覆盖数量。
-- `samples.json`：逐样本最终选择和所有成功干预。
-- `group_*/quality/`：原评价和具体失败项。
-- `group_*/diagnostics/`、`group_*/localization_v2/`：问题位置、观察时间及未定位项。
-- `group_*/rescue_v2/`：A/B/AB/C 和所有对照的完整结果。
-- `group_*/rescue_v2/selected_outputs/`：保留的合格 SDF；本来通过的保留原始版本。
+## 方式一：一次完成全部流程
 
-失败率分母是实际完成评价的新生成数；修复率分母是其中所有原始失败，未覆盖的失败不能删掉。
-若某组没完成，总表只显示已完成组，`status.json` 和 `receipts` 保留未完成任务，不能当成完整 100 个。
-若干预分支报错，会列出 `branch_errors`，不能把报错当成“原因被否定”。
-发生率还应按输入分别报告，不能把同一输入的 10 次生成当成 10 个独立复合物。
-
-## 如果中途停止
-
-- **不足 10 个未使用输入**：准备阶段停止，不启动模型，也不会偷偷拿旧输入顶替。上传同一个包，我根据 `input_inventory.json` 告诉你缺什么。
-- **程序/文件/环境不符或分析报错**：保留目录并上传同一个包；没有包则复制完整报错。
-- 不要删除新结果再重跑，不要同时启动两个进程，不要反复追加实验。
-- 已完成任务有校验记录。如果仅需继续尚未启动的任务，可用同一个 `--run` 命令；已启动但没完成的任务会拒绝自动重试，先看报错。没有再次采样或替换失败样本的隐式逻辑。
-
-## 怎样解释这次结果
-
-按你的操作定义，某个干预让原失败样本通过完整原标准，就记录为有效修复候选；全部成功分支都会保留。
-AB 组合独自成功不意味着 A、B 单独也都成立。
-C 会移动固定片段坐标，必须与 A/B/AB 的结果分开报告。
-现有程序能观察某些问题何时出现在记录轨迹中，但不保证每种失败都能定位；不能把观察时间写成已证明的因果起点。
-这轮检验方法对未用于此前调试的本地配体输入是否还能工作；没有原因真值标签，不能据此给出“根因准确率”。
-
-## 交付前验证
-
-20 项 CPU 软件测试通过，包括：100 个任务恰好分成五组、排除旧输入和重复配体图、输出路径传递、拒绝覆盖、失败不自动重试、已完成任务不重复执行、汇总分母、打包排除大张量、兼容修正的备份/重复安装、无效解码时保留正确的固定化学标签。
-其中一次完整模拟执行了 100 个生成任务和 25 个分析步骤，并验证再次执行不会启动子程序。
-模拟子程序没有生成真实分子；本环境没有你的 CUDA、模型权重和完整输入，真实实验需要在你的 WSL 环境运行。
-
-可选软件自检，不是额外科学实验：
+确保 `INTERVENTION_INPUT_DIR` 正好是本次 `GENERATION_DIR` 的 `failed` 子目录。
 
 ```bash
-python -B -m unittest discover -s scaffold_validation100 -p 'test_runner.py' -v
+python scaffold_validation100/run.py --repo .
 ```
+
+依次生成、判别、定位、分类，再对本次失败样本运行现有干预及对照。
+
+## 方式二：分两步运行
+
+先生成、判别和定位，保存成功/失败目录：
+
+```bash
+python scaffold_validation100/run.py --repo . --generate-only
+```
+
+然后确认 `INTERVENTION_INPUT_DIR` 指向要处理的失败目录，并给 `INTERVENTION_OUTPUT_DIR` 填一个新的输出目录：
+
+```bash
+python scaffold_validation100/run.py --repo . --intervene-only
+```
+
+第二条命令**不生成新分子**。它读取所选失败样本，并自动保留同一输入配体的成功样本作为对照。对照不计入修复成功数。
+
+如只想处理部分失败样本，把 `failed/` 下选中的**整个样本子目录**复制到一个新文件夹，再把 `INTERVENTION_INPUT_DIR` 指向这个文件夹。每次选择同一批生成结果中的样本。不要只复制 SDF、修改 SDF、删除 `sample.json`，也不要混入另一个实验的样本。
+
+若全部样本原本成功，失败目录为空也能正常完成，报告请求干预 0 个。
+
+## 输出在哪里
+
+| 路径（以上面配置为例） | 内容 |
+|---|---|
+| `outputs/experiment_001/generated/success/` | 原始生成即通过完整判别的样本 |
+| `outputs/experiment_001/generated/failed/` | 原始生成未通过的样本 |
+| `outputs/experiment_001/generated/group_*/` | 原始生成轨迹、判别和定位证据 |
+| `outputs/experiment_001/generated/inputs/` | 本次 SDF/PDB 的内容副本，避免后来更换原文件影响旧实验 |
+| `outputs/experiment_001/intervention/success/` | 请求干预后修复成功的样本 |
+| `outputs/experiment_001/intervention/failed/` | 请求干预后仍未修复的样本；`result.json` 区分未通过、不支持与分支错误 |
+| `outputs/experiment_001/intervention/group_*/rescue_v2/` | 所有干预和对照的详细结果 |
+| `outputs/experiment_001/intervention/summary.json` | 请求数量、修复数量、未修复数量、分支错误等 |
+
+每个原始样本子目录里有 `molecule.sdf` 和 `sample.json`；后者记录输入、原始记录位置和失败判据。若生成过程无法解码出分子，SDF 可能为空，这个失败样本依然计入统计，不会被丢弃。
+
+每个干预结果子目录里有 `molecule.sdf` 和 `result.json`。成功目录保存通过判别的干预分子；失败目录保留原始失败分子，各尝试分支在详细结果目录内。原始 `generated/` 不会因为修复成功而移动或改写分子。
+
+**保留整个 `generated/` 目录。** 后续定位和干预需要原始张量、原子映射、判别报告和轨迹，不能只留下分类后的 SDF。目录中的引用记录不等于已经复制所有轨迹。
+
+修复统计仍区分不移动固定坐标的 A/B/AB 与允许移动固定坐标的 C。C 不是相同固定坐标条件下的成功；随机/力场对照不能冒充修复结果。
+
+## 发回什么
+
+完整运行或单独干预结束，发终端提示的：
+
+```text
+outputs/experiment_001/intervention/validation100_review.zip
+```
+
+只运行生成步骤时，发：
+
+```text
+outputs/experiment_001/generated/validation100_review.zip
+```
+
+名称保留兼容习惯，实际数量不限制 100。包中包含本次输入副本、分类和详细结果，省略大型 `.pt` 和轨迹 `.xyz`；这些仍需留在你的机器上。
+
+## 准备、继续与回退
+
+只检查输入并固定本次计划：`python scaffold_validation100/run.py --repo . --prepare`。
+
+运行该计划：`python scaffold_validation100/run.py --repo . --run --output outputs/experiment_001/generated`。此命令只完成生成、判别、定位与分类；随后用 `--intervene-only` 做干预。已完成且完整的步骤会复用；已失败或输出被修改的步骤不会自动重复，以免混合结果。改 `config.py` 不会改变已固定的计划。
+
+安装后不能用新代码续跑旧版本的半成品实验。先结束运行再更新；旧结果和备份均保留。
+
+需要回退时，使用安装时输出的实际备份路径：
+
+```bash
+python scaffold_path_update/install.py --repo . --restore archive/validation_paths_backup_实际编号
+```
+
+## 检验范围
+
+- CPU 软件测试覆盖路径、输入数量、完整运行、分步运行、失败子集、空失败目录、覆盖防护、文件变更检查、安装及回退。
+- 用前两批已评估的 200 个分子记录复核分类和统计，保持 66 失败/59 修复以及 55 失败/50 修复；没有重算这些分子的化学评价或干预。
+- 现有 29 项定位软件测试通过。生成参数列表、非入口评价函数、定位与修复公式保持原样。
+- 本环境没有执行真实 FLOWR GPU 生成或重新执行分子干预。安装后先用默认 5 个样本做本地验证，再扩大数量。输入路径支持扩展不代表已验证所有数据集或其他模型。
