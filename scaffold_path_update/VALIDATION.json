@@ -1,0 +1,29 @@
+{
+  "software_tests_passed": 19,
+  "existing_localization_tests_passed": 29,
+  "synthetic_pipeline": "5 sample full pipeline; 21 sample generation then subset intervention; 25 sample prepare/run/resume; external paths with spaces; empty failures; invalid input and changed/missing files.",
+  "archived_result_regression": [
+    {
+      "archive": "validation100_review.zip",
+      "original_passes": 34,
+      "original_failures": 66,
+      "repaired": 59,
+      "branch_errors": 0,
+      "original_sdf_bytes_preserved": true,
+      "active_selection_identical": true
+    },
+    {
+      "archive": "validation100_review(1).zip",
+      "original_passes": 45,
+      "original_failures": 55,
+      "repaired": 50,
+      "branch_errors": 15,
+      "original_sdf_bytes_preserved": true,
+      "active_selection_identical": true
+    }
+  ],
+  "installer": "Known 54-source snapshot installation, hash checks, idempotence and rollback/restore verified; simulated write failure rollback tested.",
+  "actual_gpu_generation_performed": false,
+  "actual_molecular_intervention_performed": false,
+  "scope": "Input paths, output classification and explicit intervention selection. Original endpoint, model settings and repair formulas preserved. Not a new repair algorithm or cross-model experiment."
+}

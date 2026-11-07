@@ -1,0 +1,28 @@
+test_config_does_not_execute_code_or_ignore_misspellings (__main__.ConfigTests.test_config_does_not_execute_code_or_ignore_misspellings) ... ok
+test_default_repeats_previous_100_input_plan (__main__.ConfigTests.test_default_repeats_previous_100_input_plan) ... ok
+test_duplicate_jobs_rejected (__main__.ConfigTests.test_duplicate_jobs_rejected) ... ok
+test_parameter_validation (__main__.ConfigTests.test_parameter_validation) ... ok
+test_same_graph_in_different_contexts_is_allowed (__main__.ConfigTests.test_same_graph_in_different_contexts_is_allowed) ... ok
+test_seed_boundary (__main__.ConfigTests.test_seed_boundary) ... ok
+test_sizes_and_partial_groups (__main__.ConfigTests.test_sizes_and_partial_groups) ... ok
+test_install_backup_idempotence_and_restore (__main__.InstallerTests.test_install_backup_idempotence_and_restore) ... ok
+test_package_corruption_is_rejected (__main__.InstallerTests.test_package_corruption_is_rejected) ... ok
+test_reinstall_keeps_user_config (__main__.InstallerTests.test_reinstall_keeps_user_config) ... ok
+test_unknown_source_and_active_lock_block_before_changes (__main__.InstallerTests.test_unknown_source_and_active_lock_block_before_changes) ... ok
+test_write_failure_restores_original_files (__main__.InstallerTests.test_write_failure_restores_original_files) ... ok
+test_synthetic_pipeline_multiple_sizes_and_resume (__main__.PipelineTests.test_synthetic_pipeline_multiple_sizes_and_resume) ... ok
+test_bad_history_does_not_block_prepare_and_repetition (__main__.RunnerTests.test_bad_history_does_not_block_prepare_and_repetition) ... ok
+test_default_main_prepares_then_runs_once (__main__.RunnerTests.test_default_main_prepares_then_runs_once) ... ok
+test_explicit_invalid_input_is_not_silently_replaced (__main__.RunnerTests.test_explicit_invalid_input_is_not_silently_replaced) ... ok
+test_group_counts_flow_into_validators_and_rescue_limit (__main__.RunnerTests.test_group_counts_flow_into_validators_and_rescue_limit) ... ok
+test_missing_samples_and_dropped_failures_rejected (__main__.RunnerTests.test_missing_samples_and_dropped_failures_rejected) ... ok
+test_partial_aggregate_uses_real_denominators (__main__.RunnerTests.test_partial_aggregate_uses_real_denominators) ... ok
+test_prepare_error_cannot_start_generation (__main__.RunnerTests.test_prepare_error_cannot_start_generation) ... ok
+test_receipt_reuse_and_failed_stage_guard (__main__.RunnerTests.test_receipt_reuse_and_failed_stage_guard) ... ok
+test_report_contains_actual_settings_not_next_experiment_config (__main__.RunnerTests.test_report_contains_actual_settings_not_next_experiment_config) ... ok
+test_source_and_plan_drift_still_rejected (__main__.RunnerTests.test_source_and_plan_drift_still_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 11.278s
+
+OK

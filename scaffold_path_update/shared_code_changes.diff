@@ -1,0 +1,150 @@
+--- before/record_scaffold_run.py
++++ after/record_scaffold_run.py
+@@ -377,7 +377,7 @@
+     return digest.hexdigest()
+ 
+ 
+-def main():
++def parse_options(argv=None):
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument("--case", choices=["ptp1b", "bace", "cdk2", "tyk2"], default="ptp1b")
+     parser.add_argument("--seed", type=int, default=42)
+@@ -385,13 +385,29 @@
+     parser.add_argument("--ckpt_path", default="checkpoints/flowr_root_v2.2.ckpt")
+     parser.add_argument("--save_dir", default=None)
+     parser.add_argument("--baseline", help="Existing unoptimized SDF from the same case, seed and settings.")
+-    options = parser.parse_args()
++    parser.add_argument("--pdb_file", type=Path, help="Explicit protein PDB; use together with --ligand_file")
++    parser.add_argument("--ligand_file", type=Path, help="Explicit ligand SDF; use together with --pdb_file")
++    parser.add_argument("--input_name", help="Stable dataset identity for downstream records")
++    options = parser.parse_args(argv)
++    if (options.pdb_file is None) != (options.ligand_file is None):
++        parser.error("Supply both --pdb_file and --ligand_file")
++    if options.ligand_idx < 0:
++        parser.error("ligand_idx must be non-negative")
++    if options.input_name:
++        import re
++        if not re.fullmatch(r"[A-Za-z0-9_-]+", options.input_name):
++            parser.error("input_name must use letters, digits, underscore or hyphen")
++    return parser, options
++
++
++def main():
++    parser, options = parse_options()
+     root = Path.cwd()
+     if not (root / "flowr/gen/generate_from_pdb.py").is_file():
+         parser.error("Run from ~/projects/flowr_root with the existing .venv activated.")
+     sys.path.insert(0, str(root))
+-    pdb = root / f"examples/{options.case}_protein.pdb"
+-    ligand = root / f"examples/{options.case}_ligands.sdf"
++    pdb = (options.pdb_file or root / f"examples/{options.case}_protein.pdb").resolve()
++    ligand = (options.ligand_file or root / f"examples/{options.case}_ligands.sdf").resolve()
+     checkpoint = Path(options.ckpt_path).resolve()
+     for path in [pdb, ligand, checkpoint]:
+         if not path.is_file():
+@@ -431,6 +447,8 @@
+                 "recorder_sha256": file_hash(__file__),
+                 "hidden_layer_activations_recorded": False,
+                 "scope": "One attempted generation, default repair and native trajectory behavior preserved; additional observer files retain failures."}
++    if options.input_name:
++        manifest["case_label"] = options.input_name
+     try:
+         git = subprocess.run(["git", "rev-parse", "HEAD"], text=True, capture_output=True)
+         manifest["git_commit"] = git.stdout.strip() if git.returncode == 0 else None
+--- before/scaffold_evaluation_v2/evaluate_scaffold_outputs.py
++++ after/scaffold_evaluation_v2/evaluate_scaffold_outputs.py
+@@ -374,7 +374,7 @@
+                 if seed is None:
+                     seed = actual_seed
+                 if case is None:
+-                    case = Path(manifest["args"]["pdb_file"]).stem.removesuffix("_protein")
++                    case = manifest.get("case_label") or Path(manifest["args"]["pdb_file"]).stem.removesuffix("_protein")
+                 folder = record/"attempt_000"
+                 task = read_json(folder/"task_definition.json")
+                 if (summary["n_attempts"] != 1 or actual_seed != seed or not task["mapping_verified"]
+--- before/scaffold_study_v1/terminal_control.py
++++ after/scaffold_study_v1/terminal_control.py
+@@ -205,18 +205,38 @@
+             for p in original_pairs]
+ 
+ 
++def choose_active(items, routes, requested):
++    """Select requested failures and retain same-input passing controls."""
++    # Use the evaluator conjunction, not a route-name assumption.
++    failed={item['id'] for item in items if not successful(item['rows']['raw_without_repair'])}
++    if requested is None:
++        requested=failed
++    else:
++        require(isinstance(requested,list) and all(isinstance(x,str) for x in requested), 'Requested IDs must be a JSON list')
++        require(len(requested)==len(set(requested)), 'Duplicate requested failure IDs')
++        require(set(requested)<=failed, 'Requested ID is missing or is an original success')
++        requested=set(requested)
++    eligible_inputs={item['input_id'] for item in items if item['id'] in requested
++                     and routes[item['id']]['status']=='supported_geometry'}
++    selected=[item for item in items if item['input_id'] in eligible_inputs
++              and (item['id'] in requested or successful(item['rows']['raw_without_repair']))
++              and routes[item['id']]['status']!='unsupported']
++    return selected, requested
++
++
+ def main(argv=None):
+     p=argparse.ArgumentParser(description=__doc__)
+     p.add_argument('--repo',type=Path,default=Path.cwd())
+     p.add_argument('--cohort',type=Path,default=Path('outputs/sh_restart_v1'))
+     p.add_argument('--output-dir',type=Path)
+     p.add_argument('--max-runs', type=int, default=20, help='Planned sample limit for this invocation; batch runner supplies the group size')
++    p.add_argument('--failure-ids', type=Path, help='JSON list of requested failure IDs; passing controls are retained')
+     a=p.parse_args(argv);repo=a.repo.resolve();batch=(repo/a.cohort).resolve()
+     if a.max_runs < 1: p.error('--max-runs must be positive')
+     out=(a.output_dir.resolve() if a.output_dir else batch/'rescue_v2')
+     if out.exists():p.error('Output already exists. Preserve it; no automatic retry or overwrite.')
+     out.mkdir(parents=True)
+-    files=EvidenceFiles(repo);records=[];conclusions=[];branch_errors=[];coverage=[]
++    files=EvidenceFiles(repo);records=[];conclusions=[];branch_errors=[];coverage=[];requested_ids=None
+     status=dict(completed=False,phase='preflight',baseline_runs_passed=0,active_arms_completed=0,
+                 errors=[],new_generations=0,neural_interventions=0)
+     try:
+@@ -256,13 +276,12 @@
+         require(config==gp['posebusters_config'], 'Native PB configuration changed')
+         # Include every supported failure, irrespective of fixed/generated region.
+         routes={item['id']:route_failure(item['rows']['raw_without_repair']) for item in items}
+-        eligible_inputs={item['input_id'] for item in items if routes[item['id']]['status']=='supported_geometry'}
+-        selected=[item for item in items if item['input_id'] in eligible_inputs
+-                  and routes[item['id']]['status']!='unsupported']
++        requested = files.json(a.failure_ids.resolve()) if a.failure_ids else None
++        selected, requested_ids = choose_active(items, routes, requested)
+         require(len(selected)<=a.max_runs, 'Active samples exceed the declared group limit')
+         selected_ids={item['id'] for item in selected}
+         coverage=[dict(run_id=item['id'],input_id=item['input_id'],**routes[item['id']],
+-            selected=item['id'] in selected_ids,failed_checks=item['rows']['raw_without_repair'].get('posebusters_failed_checks',[]))
++            selected=item['id'] in selected_ids,requested_failure=item['id'] in requested_ids,failed_checks=item['rows']['raw_without_repair'].get('posebusters_failed_checks',[]))
+             for item in items]
+         write_json(out/'coverage.json',coverage)
+         excluded=[dict(run_id=item['id'],posebusters_valid=item['rows']['raw_without_repair']['posebusters_valid'],
+@@ -281,7 +300,8 @@
+             active_runs=[item['id'] for item in selected], excluded=excluded,
+             active_arms=len(selected)*len(arms),new_generations=0,neural_interventions=0,
+             versions=dict(torch=str(torch.__version__),rdkit=rdkit.__version__,numpy=np.__version__,scipy=scipy.__version__),
+-            selection='All supported geometry failures and same-input passing controls; no case/atom/region hard coding.',
++            selection='Requested supported geometry failures and same-input passing controls; no case/atom/region hard coding.',
++            requested_failures=sorted(requested_ids),
+             interventions=dict(A='Restore only final fixed-atom coordinates from prior in world frame.',
+                 B='Environment-aware UFF relaxation of generated heavy atoms; fixed heavy atoms remain at baseline.',
+                 AB='Restore fixed coordinates, then perform B.',
+@@ -487,6 +507,8 @@
+             candidate_errors=[e['arm'] for e in branch_errors if e['run_id']==rid])
+         if selection['result']=='unresolved' and coverage_by_id.get(rid,{}).get('status')=='unsupported':
+             selection['result']='unsupported'
++        if not selection['baseline_success'] and requested_ids is not None and rid not in requested_ids:
++            selection['result']='not_requested'
+         arm=selection['selected_arm']
+         if arm is not None and status['completed']:
+             shutil.copy2(out/rid/(arm+'.sdf'),selected_dir/(rid+'.sdf'))
+@@ -500,6 +522,7 @@
+         rescued_with_fixed_coordinate_relaxation=sum(not r['baseline_success'] and r['selected_arm']=='C' for r in result_summary),
+         unresolved=sum(r['result']=='unresolved' for r in result_summary),
+         unsupported=sum(r['result']=='unsupported' for r in result_summary),
++        not_requested=sum(r['result']=='not_requested' for r in result_summary),
+         branch_errors=len(branch_errors),
+         interpretation='Portfolio rescue count, not a new native generation success rate. C relaxes fixed-coordinate conditioning.')
+     write_json(out/'summary.json',totals)

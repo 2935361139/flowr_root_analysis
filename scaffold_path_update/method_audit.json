@@ -1,0 +1,51 @@
+{
+  "source_equivalence": {
+    "record_scaffold_run.py": {
+      "existing_changed_functions": [
+        "main"
+      ],
+      "other_functions_and_classes_identical": true,
+      "added_functions": [
+        "parse_options"
+      ],
+      "native_generation_argv_unchanged": true
+    },
+    "scaffold_evaluation_v2/evaluate_scaffold_outputs.py": {
+      "existing_changed_functions": [
+        "main"
+      ],
+      "other_functions_and_classes_identical": true,
+      "added_functions": []
+    },
+    "scaffold_study_v1/terminal_control.py": {
+      "existing_changed_functions": [
+        "main"
+      ],
+      "other_functions_and_classes_identical": true,
+      "added_functions": [
+        "choose_active"
+      ]
+    },
+    "eligibility_exactly_unchanged": true
+  },
+  "archived_result_regression": [
+    {
+      "archive": "validation100_review.zip",
+      "original_passes": 34,
+      "original_failures": 66,
+      "repaired": 59,
+      "branch_errors": 0,
+      "original_sdf_bytes_preserved": true,
+      "active_selection_identical": true
+    },
+    {
+      "archive": "validation100_review(1).zip",
+      "original_passes": 45,
+      "original_failures": 55,
+      "repaired": 50,
+      "branch_errors": 15,
+      "original_sdf_bytes_preserved": true,
+      "active_selection_identical": true
+    }
+  ]
+}

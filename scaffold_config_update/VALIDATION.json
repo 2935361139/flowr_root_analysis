@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-07",
+  "configurable_runner_and_installer_tests": {
+    "passed": 23,
+    "failed": 0,
+    "log": "software_tests.log"
+  },
+  "unchanged_diagnosis_tests": {
+    "passed": 29,
+    "failed": 0,
+    "log": "study_tests.log"
+  },
+  "synthetic_full_pipeline_sizes": [
+    21,
+    25,
+    100
+  ],
+  "synthetic_generation_jobs_total": 146,
+  "synthetic_analysis_stages_total": 40,
+  "source_equivalence": {
+    "changed_terminal_functions": [
+      "main"
+    ],
+    "unchanged_terminal_functions": [
+      "EvidenceFiles",
+      "compare_prediction",
+      "restore_frame",
+      "decode",
+      "evaluate",
+      "compare_endpoint",
+      "save_mol",
+      "coordinate_arm",
+      "pair_checks"
+    ],
+    "source_files_checked": 54,
+    "source_files_changed": [
+      "scaffold_study_v1/terminal_control.py"
+    ],
+    "generation_arguments_unchanged": true,
+    "native_evaluator_unchanged": true,
+    "geometry_intervention_unchanged": true,
+    "input_eligibility_functions_unchanged": [
+      "canonical",
+      "heavy_mol",
+      "input_profile",
+      "require"
+    ],
+    "gpu_generation_executed": false
+  },
+  "installation_simulation": "Passed on copied, previously verified 54-file source environment; payload and expected method hashes match",
+  "limitations": [
+    "No real GPU molecular generation performed here.",
+    "No full PoseBusters reevaluation or intervention run performed here.",
+    "Synthetic outputs are software fixtures, not experimental data.",
+    "Only the existing recorder example inputs are supported; this is not a cross-model adapter."
+  ],
+  "result": "software_checks_passed_local_GPU_validation_pending"
+}
