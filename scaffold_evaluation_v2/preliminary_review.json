@@ -1,0 +1,180 @@
+{
+  "scope": "Integrity and outcome audit of two uploaded pilot bundles; chemical checks independently verified with recorded RDKit version. Not a causal or held-out generalization result.",
+  "cases": {
+    "bace": {
+      "archive_sha256": "da13b8fdbadd7923398fd267801712ba7b6478e851b31244592e59cc5cd037dc",
+      "runs_checked": [
+        {
+          "seed": 42,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 43,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 44,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 45,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 46,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 47,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 48,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 49,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 50,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 51,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        }
+      ],
+      "same_recorded_conditions_within_case_except_seed": true,
+      "raw_chemical_valid_connected": 10,
+      "raw_murcko_scaffold_changed": 10,
+      "raw_murcko_scaffold_evaluated": 10,
+      "fixed_drift_first_saved_stage": "final_corrector_prediction",
+      "fixed_drift_rms_range_A": [
+        0.19208544492721558,
+        1.0466166734695435
+      ]
+    },
+    "cdk2": {
+      "archive_sha256": "58fd90bcc9db45cb9565308986a8f99090791b2838170d351be4aa4478dcb045",
+      "runs_checked": [
+        {
+          "seed": 42,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 43,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 44,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 45,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 46,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 47,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 48,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 49,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 50,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        },
+        {
+          "seed": 51,
+          "completed": true,
+          "forward_calls": 101,
+          "sampler_frames": 101,
+          "mapping_verified": true
+        }
+      ],
+      "same_recorded_conditions_within_case_except_seed": true,
+      "raw_chemical_valid_connected": 10,
+      "raw_murcko_scaffold_changed": 4,
+      "raw_murcko_scaffold_evaluated": 10,
+      "fixed_drift_first_saved_stage": "final_corrector_prediction",
+      "fixed_drift_rms_range_A": [
+        0.28952255845069885,
+        0.49510231614112854
+      ]
+    }
+  },
+  "limitations": [
+    "The compact new bundles omit final tensors and protein PDB files; original-coordinate slot verification and PoseBusters remain to run in the user environment.",
+    "Fixed-fragment displacement is a continuous observation, not a failure cutoff.",
+    "Cases were chosen for availability; this is an exploratory pilot, not a representative benchmark."
+  ],
+  "same_recorded_generator_runtime_and_recorder_across_new_runs": true,
+  "validation_file": "validation_results.json"
+}

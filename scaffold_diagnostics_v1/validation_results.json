@@ -1,0 +1,387 @@
+{
+  "completed": true,
+  "checks_passed": 109,
+  "checks": [
+    "charge_vocabulary_from_recorded_source",
+    "seed42_network_prediction_complete_indices",
+    "seed42_sampler_state_complete_indices",
+    "seed42_final_sites_match_completed_evaluator",
+    "seed42_final_frame_drift_not_compared",
+    "seed42_temporal_failure_selection_from_endpoint",
+    "seed43_network_prediction_complete_indices",
+    "seed43_sampler_state_complete_indices",
+    "seed43_final_sites_match_completed_evaluator",
+    "seed43_final_frame_drift_not_compared",
+    "seed43_temporal_failure_selection_from_endpoint",
+    "seed44_network_prediction_complete_indices",
+    "seed44_sampler_state_complete_indices",
+    "seed44_final_sites_match_completed_evaluator",
+    "seed44_final_frame_drift_not_compared",
+    "seed44_temporal_failure_selection_from_endpoint",
+    "seed45_network_prediction_complete_indices",
+    "seed45_sampler_state_complete_indices",
+    "seed45_final_sites_match_completed_evaluator",
+    "seed45_final_frame_drift_not_compared",
+    "seed45_temporal_failure_selection_from_endpoint",
+    "seed46_network_prediction_complete_indices",
+    "seed46_sampler_state_complete_indices",
+    "seed46_final_sites_match_completed_evaluator",
+    "seed46_final_frame_drift_not_compared",
+    "seed46_temporal_failure_selection_from_endpoint",
+    "seed47_network_prediction_complete_indices",
+    "seed47_sampler_state_complete_indices",
+    "seed47_final_sites_match_completed_evaluator",
+    "seed47_final_frame_drift_not_compared",
+    "seed47_temporal_failure_selection_from_endpoint",
+    "decode_fixed_atom_change_separate_from_neural_cause",
+    "seed48_network_prediction_complete_indices",
+    "seed48_sampler_state_complete_indices",
+    "seed48_final_sites_match_completed_evaluator",
+    "seed48_final_frame_drift_not_compared",
+    "seed48_temporal_failure_selection_from_endpoint",
+    "seed49_network_prediction_complete_indices",
+    "seed49_sampler_state_complete_indices",
+    "seed49_final_sites_match_completed_evaluator",
+    "seed49_final_frame_drift_not_compared",
+    "seed49_temporal_failure_selection_from_endpoint",
+    "strict_boundary_difference_is_not_a_connection_failure",
+    "seed50_network_prediction_complete_indices",
+    "seed50_sampler_state_complete_indices",
+    "seed50_final_sites_match_completed_evaluator",
+    "seed50_final_frame_drift_not_compared",
+    "seed50_temporal_failure_selection_from_endpoint",
+    "seed51_network_prediction_complete_indices",
+    "seed51_sampler_state_complete_indices",
+    "seed51_final_sites_match_completed_evaluator",
+    "seed51_final_frame_drift_not_compared",
+    "seed51_temporal_failure_selection_from_endpoint",
+    "full_tensor_seed47_connected",
+    "full_tensor_seed47_carbon_signature",
+    "full_tensor_seed43_connected",
+    "full_tensor_seed43_carbon_signature",
+    "full_tensor_seed50_connected",
+    "full_tensor_seed50_carbon_signature",
+    "same_real_failure_after_atom_permutation_and_noncontiguous_fixed_mask",
+    "connectivity_invariant_to_atom_permutation",
+    "different_failure_class_disconnection_detected",
+    "disconnection_not_mislabeled_as_carbon_overvalence",
+    "fixed_internal_bond_changes_detected",
+    "masked_bond_kept_unknown_for_valence",
+    "masked_bond_kept_unknown_for_connectivity",
+    "fused_aromatic_bond_sum_not_misclassified_as_neutral_carbon_failure",
+    "bace42_no_invented_connection_failure",
+    "bace42_geometry_explicitly_awaits_localization",
+    "bace43_no_invented_connection_failure",
+    "bace43_geometry_explicitly_awaits_localization",
+    "bace44_no_invented_connection_failure",
+    "bace44_geometry_explicitly_awaits_localization",
+    "bace45_no_invented_connection_failure",
+    "bace45_geometry_explicitly_awaits_localization",
+    "bace46_no_invented_connection_failure",
+    "bace46_geometry_explicitly_awaits_localization",
+    "bace47_no_invented_connection_failure",
+    "bace47_geometry_explicitly_awaits_localization",
+    "bace48_no_invented_connection_failure",
+    "bace48_geometry_explicitly_awaits_localization",
+    "bace49_no_invented_connection_failure",
+    "bace49_geometry_explicitly_awaits_localization",
+    "bace50_no_invented_connection_failure",
+    "bace50_geometry_explicitly_awaits_localization",
+    "bace51_no_invented_connection_failure",
+    "bace51_geometry_explicitly_awaits_localization",
+    "cdk242_no_invented_connection_failure",
+    "cdk242_scaffold_identity_separate",
+    "cdk243_no_invented_connection_failure",
+    "cdk243_scaffold_identity_separate",
+    "cdk244_no_invented_connection_failure",
+    "cdk244_scaffold_identity_separate",
+    "cdk245_no_invented_connection_failure",
+    "cdk245_scaffold_identity_separate",
+    "cdk246_no_invented_connection_failure",
+    "cdk246_scaffold_identity_separate",
+    "cdk247_no_invented_connection_failure",
+    "cdk247_scaffold_identity_separate",
+    "cdk248_no_invented_connection_failure",
+    "cdk248_scaffold_identity_separate",
+    "cdk249_no_invented_connection_failure",
+    "cdk249_scaffold_identity_separate",
+    "cdk250_no_invented_connection_failure",
+    "cdk250_scaffold_identity_separate",
+    "cdk251_no_invented_connection_failure",
+    "cdk251_scaffold_identity_separate",
+    "early_transient_event_not_reported_as_terminal_persistence",
+    "unknown_breaks_contiguous_persistence"
+  ],
+  "real_data_coverage": "10 PTP1B trajectories × 101 network calls and 101 sampler frames, plus full final tensors of 3 real runs; endpoint classification on all 30 runs.",
+  "real_ptp1b_observations": [
+    {
+      "case": "ptp1b",
+      "seed": 42,
+      "temporal_observations": [],
+      "candidate_observation_windows": [],
+      "unlocalized_endpoint_problems": [
+        {
+          "problem": "minimum_distance_to_waters",
+          "endpoint_stages": [
+            "raw_without_repair",
+            "run_decode"
+          ],
+          "status": "endpoint_failure_detected_not_locally_or_temporally_localized",
+          "reason": "Atom-level geometry/environment tracing requires its own adapter; a PoseBusters failure alone does not establish a scaffold-fragment connection failure."
+        }
+      ],
+      "decode_stage_observations": [],
+      "scaffold_change": true,
+      "scaffold_change_note": "Unchanged Murcko scaffold is reported separately, not as a connection error.",
+      "causal_status": "not_tested",
+      "input_atom_contributions": "not_assessed"
+    },
+    {
+      "case": "ptp1b",
+      "seed": 43,
+      "temporal_observations": [],
+      "candidate_observation_windows": [],
+      "unlocalized_endpoint_problems": [],
+      "decode_stage_observations": [],
+      "scaffold_change": true,
+      "scaffold_change_note": "Unchanged Murcko scaffold is reported separately, not as a connection error.",
+      "causal_status": "not_tested",
+      "input_atom_contributions": "not_assessed"
+    },
+    {
+      "case": "ptp1b",
+      "seed": 44,
+      "temporal_observations": [],
+      "candidate_observation_windows": [],
+      "unlocalized_endpoint_problems": [
+        {
+          "problem": "minimum_distance_to_waters",
+          "endpoint_stages": [
+            "raw_without_repair",
+            "run_decode"
+          ],
+          "status": "endpoint_failure_detected_not_locally_or_temporally_localized",
+          "reason": "Atom-level geometry/environment tracing requires its own adapter; a PoseBusters failure alone does not establish a scaffold-fragment connection failure."
+        }
+      ],
+      "decode_stage_observations": [],
+      "scaffold_change": true,
+      "scaffold_change_note": "Unchanged Murcko scaffold is reported separately, not as a connection error.",
+      "causal_status": "not_tested",
+      "input_atom_contributions": "not_assessed"
+    },
+    {
+      "case": "ptp1b",
+      "seed": 45,
+      "temporal_observations": [],
+      "candidate_observation_windows": [],
+      "unlocalized_endpoint_problems": [
+        {
+          "problem": "minimum_distance_to_waters",
+          "endpoint_stages": [
+            "raw_without_repair",
+            "run_decode"
+          ],
+          "status": "endpoint_failure_detected_not_locally_or_temporally_localized",
+          "reason": "Atom-level geometry/environment tracing requires its own adapter; a PoseBusters failure alone does not establish a scaffold-fragment connection failure."
+        }
+      ],
+      "decode_stage_observations": [],
+      "scaffold_change": true,
+      "scaffold_change_note": "Unchanged Murcko scaffold is reported separately, not as a connection error.",
+      "causal_status": "not_tested",
+      "input_atom_contributions": "not_assessed"
+    },
+    {
+      "case": "ptp1b",
+      "seed": 46,
+      "temporal_observations": [],
+      "candidate_observation_windows": [],
+      "unlocalized_endpoint_problems": [
+        {
+          "problem": "minimum_distance_to_waters",
+          "endpoint_stages": [
+            "raw_without_repair",
+            "run_decode"
+          ],
+          "status": "endpoint_failure_detected_not_locally_or_temporally_localized",
+          "reason": "Atom-level geometry/environment tracing requires its own adapter; a PoseBusters failure alone does not establish a scaffold-fragment connection failure."
+        }
+      ],
+      "decode_stage_observations": [],
+      "scaffold_change": true,
+      "scaffold_change_note": "Unchanged Murcko scaffold is reported separately, not as a connection error.",
+      "causal_status": "not_tested",
+      "input_atom_contributions": "not_assessed"
+    },
+    {
+      "case": "ptp1b",
+      "seed": 47,
+      "temporal_observations": [
+        {
+          "problem": "fixed_neutral_carbon_overvalence",
+          "fixed_sampler_index": 0,
+          "streams": {
+            "network_prediction": {
+              "status": "observed",
+              "persistent_from_index": 38,
+              "continuous_time": 0.3799999952316284,
+              "saved_stage": "raw_network_prediction",
+              "last_index": 100,
+              "n_suffix_records": 63,
+              "preceding_index": 37,
+              "preceding_value": false,
+              "interpretation": "Start of the final uninterrupted observed signature; not the earliest causal computation."
+            },
+            "sampler_state": {
+              "status": "observed",
+              "persistent_from_index": 85,
+              "continuous_time": null,
+              "saved_stage": "integrated_state_after_inpainting",
+              "last_index": 100,
+              "n_suffix_records": 16,
+              "preceding_index": 84,
+              "preceding_value": null,
+              "interpretation": "Start of the final uninterrupted observed signature; not the earliest causal computation."
+            }
+          },
+          "evidence_level": "observational",
+          "causal_status": "not_tested"
+        }
+      ],
+      "candidate_observation_windows": [
+        {
+          "problem": "fixed_neutral_carbon_overvalence",
+          "fixed_sampler_index": 0,
+          "center_call": 38,
+          "observation_calls": [
+            36,
+            37,
+            38,
+            39,
+            40
+          ],
+          "not_a_causal_scan_plan": true,
+          "note": "A later causal scan must also include earlier and out-of-window controls; do not restrict possible causes to this window."
+        }
+      ],
+      "unlocalized_endpoint_problems": [
+        {
+          "problem": "internal_energy",
+          "endpoint_stages": [
+            "run_decode"
+          ],
+          "status": "endpoint_failure_detected_not_locally_or_temporally_localized",
+          "reason": "Atom-level geometry/environment tracing requires its own adapter; a PoseBusters failure alone does not establish a scaffold-fragment connection failure."
+        },
+        {
+          "problem": "minimum_distance_to_waters",
+          "endpoint_stages": [
+            "run_decode"
+          ],
+          "status": "endpoint_failure_detected_not_locally_or_temporally_localized",
+          "reason": "Atom-level geometry/environment tracing requires its own adapter; a PoseBusters failure alone does not establish a scaffold-fragment connection failure."
+        }
+      ],
+      "decode_stage_observations": [
+        {
+          "observed_stage": "run_setting_decode",
+          "problem": "fixed_chemistry_changed_during_decode",
+          "changed_sites": [
+            0
+          ],
+          "note": "Observed before/after decode change, not a neural-network root-cause claim."
+        }
+      ],
+      "scaffold_change": null,
+      "scaffold_change_note": "Unchanged Murcko scaffold is reported separately, not as a connection error.",
+      "causal_status": "not_tested",
+      "input_atom_contributions": "not_assessed"
+    },
+    {
+      "case": "ptp1b",
+      "seed": 48,
+      "temporal_observations": [],
+      "candidate_observation_windows": [],
+      "unlocalized_endpoint_problems": [
+        {
+          "problem": "minimum_distance_to_waters",
+          "endpoint_stages": [
+            "raw_without_repair",
+            "run_decode"
+          ],
+          "status": "endpoint_failure_detected_not_locally_or_temporally_localized",
+          "reason": "Atom-level geometry/environment tracing requires its own adapter; a PoseBusters failure alone does not establish a scaffold-fragment connection failure."
+        }
+      ],
+      "decode_stage_observations": [],
+      "scaffold_change": true,
+      "scaffold_change_note": "Unchanged Murcko scaffold is reported separately, not as a connection error.",
+      "causal_status": "not_tested",
+      "input_atom_contributions": "not_assessed"
+    },
+    {
+      "case": "ptp1b",
+      "seed": 49,
+      "temporal_observations": [],
+      "candidate_observation_windows": [],
+      "unlocalized_endpoint_problems": [
+        {
+          "problem": "minimum_distance_to_waters",
+          "endpoint_stages": [
+            "raw_without_repair",
+            "run_decode"
+          ],
+          "status": "endpoint_failure_detected_not_locally_or_temporally_localized",
+          "reason": "Atom-level geometry/environment tracing requires its own adapter; a PoseBusters failure alone does not establish a scaffold-fragment connection failure."
+        }
+      ],
+      "decode_stage_observations": [],
+      "scaffold_change": true,
+      "scaffold_change_note": "Unchanged Murcko scaffold is reported separately, not as a connection error.",
+      "causal_status": "not_tested",
+      "input_atom_contributions": "not_assessed"
+    },
+    {
+      "case": "ptp1b",
+      "seed": 50,
+      "temporal_observations": [],
+      "candidate_observation_windows": [],
+      "unlocalized_endpoint_problems": [],
+      "decode_stage_observations": [],
+      "scaffold_change": true,
+      "scaffold_change_note": "Unchanged Murcko scaffold is reported separately, not as a connection error.",
+      "causal_status": "not_tested",
+      "input_atom_contributions": "not_assessed"
+    },
+    {
+      "case": "ptp1b",
+      "seed": 51,
+      "temporal_observations": [],
+      "candidate_observation_windows": [],
+      "unlocalized_endpoint_problems": [
+        {
+          "problem": "minimum_distance_to_waters",
+          "endpoint_stages": [
+            "raw_without_repair",
+            "run_decode"
+          ],
+          "status": "endpoint_failure_detected_not_locally_or_temporally_localized",
+          "reason": "Atom-level geometry/environment tracing requires its own adapter; a PoseBusters failure alone does not establish a scaffold-fragment connection failure."
+        }
+      ],
+      "decode_stage_observations": [],
+      "scaffold_change": true,
+      "scaffold_change_note": "Unchanged Murcko scaffold is reported separately, not as a connection error.",
+      "causal_status": "not_tested",
+      "input_atom_contributions": "not_assessed"
+    }
+  ],
+  "limitations": [
+    "Full 30-run CLI not executed: PyTorch and all original forward/sampler snapshots are only in the user runtime.",
+    "No hidden-state or causal tests performed by this diagnostic.",
+    "Slot permutation and synthetic failure checks validate code behavior, not scientific generalization to new complexes."
+  ],
+  "diagnostic_script_sha256": "84d44ca3d19b4809bae14b4f6cf7cb2c9189bc1546af7f916e810d6af2c6ec22",
+  "evaluated_quality_report_sha256": "e8c25bd8d8bc7f1878d20b7cf409a5248eaf3c45fe15446f2cbe04c9b4f8444b"
+}

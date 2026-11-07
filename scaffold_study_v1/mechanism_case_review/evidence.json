@@ -1,0 +1,179 @@
+{
+  "calls": [
+    {
+      "call": 7,
+      "time": [
+        0.07000000029802322,
+        0.07000000029802322,
+        0.07000000029802322
+      ],
+      "state_atom": "O",
+      "self_condition_atom": "O",
+      "output_atom": "O",
+      "output_p_O": 0.8771982192993164,
+      "output_p_C": 0.09423916041851044,
+      "fixed": true,
+      "self_condition_keys": [
+        "coords",
+        "atomics",
+        "bonds"
+      ],
+      "saved_times_at_fixed_atom": [
+        [
+          1.0
+        ],
+        [
+          1.0
+        ]
+      ]
+    },
+    {
+      "call": 8,
+      "time": [
+        0.07999999821186066,
+        0.07999999821186066,
+        0.07999999821186066
+      ],
+      "state_atom": "O",
+      "self_condition_atom": "O",
+      "output_atom": "O",
+      "output_p_O": 0.7351505756378174,
+      "output_p_C": 0.23715414106845856,
+      "fixed": true,
+      "self_condition_keys": [
+        "coords",
+        "atomics",
+        "bonds"
+      ],
+      "saved_times_at_fixed_atom": [
+        [
+          1.0
+        ],
+        [
+          1.0
+        ]
+      ]
+    },
+    {
+      "call": 9,
+      "time": [
+        0.08999999612569809,
+        0.08999999612569809,
+        0.08999999612569809
+      ],
+      "state_atom": "O",
+      "self_condition_atom": "O",
+      "output_atom": "O",
+      "output_p_O": 0.6148062348365784,
+      "output_p_C": 0.35069000720977783,
+      "fixed": true,
+      "self_condition_keys": [
+        "coords",
+        "atomics",
+        "bonds"
+      ],
+      "saved_times_at_fixed_atom": [
+        [
+          1.0
+        ],
+        [
+          1.0
+        ]
+      ]
+    },
+    {
+      "call": 100,
+      "time": [
+        0.9998999834060669,
+        0.9998999834060669,
+        0.9998999834060669
+      ],
+      "state_atom": "O",
+      "self_condition_atom": "C",
+      "output_atom": "C",
+      "output_p_O": 5.754624362452887e-05,
+      "output_p_C": 0.9998852014541626,
+      "fixed": true,
+      "self_condition_keys": [
+        "coords",
+        "atomics",
+        "bonds"
+      ],
+      "saved_times_at_fixed_atom": [
+        [
+          1.0
+        ],
+        [
+          1.0
+        ]
+      ]
+    }
+  ],
+  "input_hashes": {
+    "/workspace/flowr_root_analysis/outputs/sh_discovery_cohort_v2/runs/ptp1b_lig3/seed_47/research_record/attempt_000/forward_calls/call_0007.pt": "ea990655a51ae7ccbf4c081c130ac2a4e3bceb532476ab2f8d2fed805af24af8",
+    "/workspace/flowr_root_analysis/outputs/sh_discovery_cohort_v2/runs/ptp1b_lig3/seed_47/research_record/attempt_000/forward_calls/call_0008.pt": "dc72a4ef9de699b1f06f3e4a7e6b786f5a8d04d5bc0dea68ba7040ac1ee8c74a",
+    "/workspace/flowr_root_analysis/outputs/sh_discovery_cohort_v2/runs/ptp1b_lig3/seed_47/research_record/attempt_000/forward_calls/call_0009.pt": "126f9c367835a12fa42e2625c738643e147794bbd2b0acba99e1c604df6c7ca3",
+    "/workspace/flowr_root_analysis/outputs/sh_discovery_cohort_v2/runs/ptp1b_lig3/seed_47/research_record/attempt_000/forward_calls/call_0100.pt": "63e939a3c7c4488e5064795898aff83cba670d86fa7c569ba61f5dbd05b1c291",
+    "/workspace/flowr_root_analysis/outputs/sh_discovery_cohort_v2/runs/ptp1b_lig3/seed_47/research_record/attempt_000/sampler_steps/step_0099.pt": "e9f225a90238898473bacfe4ca18fd09353cb670f2c92182a6d0bc0250861f33",
+    "/workspace/flowr_root_analysis/outputs/sh_discovery_cohort_v2/runs/ptp1b_lig3/seed_47/research_record/attempt_000/sampler_steps/step_0100.pt": "3f32e1cb22214475e9a48d01a811698e22fe34b416730d0984eb4154ba9f6edd",
+    "/workspace/flowr_root_analysis/outputs/sh_discovery_cohort_v2/runs/ptp1b_lig3/seed_47/research_record/modules.json": "13dbf7e0e1bb6da4ad7e12d9c41bf6259a9263e9ff6bac278e122b06422c3b5c",
+    "/workspace/flowr_root_analysis/outputs/sh_discovery_cohort_v2/runs/ptp1b_lig3/seed_47/research_record/attempt_000/pocket_encoding.pt": "4af0e3e7edd0d1986212757e69dbb85033902086f28c5d0790e8b80ab087b6e5",
+    "/workspace/flowr_root_analysis/outputs/sh_discovery_cohort_v2/runs/ptp1b_lig3/seed_47/research_record/attempt_000/inputs.pt": "54680f51fc5f7fd5c223c53594a2375080261bc8a13802676210d058d42dafcd"
+  },
+  "case": "ptp1b_lig3_seed_47",
+  "fixed_sampler_slot": 2,
+  "status": "stopped_missing_checkpoint_and_original_cuda_environment",
+  "suitability": "unresolved_until_original_training_configuration_is_verified",
+  "required_checkpoint": {
+    "filename": "flowr_root_v2.2.ckpt",
+    "sha256": "b818f41dc12ffb6bc558bb0ad997055581e07cd9e49dcac1b794ed9993c46e4c",
+    "available": false
+  },
+  "training_mask_fixed_discrete_loss": null,
+  "hidden_layer_activations_recorded": false,
+  "compute": {
+    "original_torch": "2.11.0+cu130",
+    "current_torch": "2.11.0+cpu",
+    "cuda_available": false
+  },
+  "original_protein_and_ligand_checksums_match": true,
+  "recorded_generator_source_checksums_match": true,
+  "native_prediction_to_next_self_condition_max_abs_difference_cpu_softmax": 3.5762786865234375e-07,
+  "saved_state_99": {
+    "stage": "integrated_state_after_inpainting",
+    "fixed_atom": "O",
+    "bond_classes_to_slots_15_23": [
+      2,
+      1
+    ]
+  },
+  "saved_state_100": {
+    "stage": "final_corrector_prediction",
+    "fixed_atom": "C",
+    "bond_classes_to_slots_15_23": [
+      2,
+      1
+    ]
+  },
+  "candidate": {
+    "name": "erroneous_self_conditioning_maintains_fixed_identity_and_boundary_incompatibility",
+    "module": "gen.ligand_dec.inv_emb.atom_emb",
+    "module_present_in_original_inventory": true,
+    "claim_scope": "maintenance_of_error_not_origin",
+    "causal_status": "not_tested"
+  },
+  "execution": {
+    "full_replays": 0,
+    "intervention_continuations": 0,
+    "budget_limit": 24,
+    "runs": [],
+    "new_quality_evaluations": 0,
+    "runnable_intervention_entry_added": false,
+    "reason": "User explicitly requested stopping after resource-independent review if resources are missing."
+  },
+  "diagnostic_sources": {
+    "/workspace/research_review/fixtures/outputs/sh_discovery_cohort_v2_diagnostics/run_066/connection_timeline.csv": "5beda566f619453f74b71c02c226646b0e98cd5967dea4223c1370ab28de4add",
+    "/workspace/research_review/fixtures/outputs/sh_discovery_cohort_v2_diagnostics/run_066/connection_report.json": "8415ea00b37077d452d52d13edf53053fbb1c5b536d46b858754cdf19b0a3be6"
+  },
+  "verification": "Raw snapshot element labels agree with corresponding original diagnostic rows; original generator and input hashes match. No network execution."
+}
